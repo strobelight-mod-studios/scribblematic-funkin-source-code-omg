@@ -1,0 +1,3 @@
+While you'll be playing Tutorial week on Story mode, you'll get an epic MP4 video cutscene, but for some reason when you want to skip it with enter, the game crashes.
+DO NOT PRESS ENTER WHILE YOU'RE IN A CUTSCENE.
+I may go fix that later.

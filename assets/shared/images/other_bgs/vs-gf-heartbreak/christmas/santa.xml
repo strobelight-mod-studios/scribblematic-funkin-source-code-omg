@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="santa.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="santa idle in fear0000" x="2" y="2" width="421" height="683" frameX="-79" frameY="-26" frameWidth="564" frameHeight="709"/>
+	<SubTexture name="santa idle in fear0001" x="427" y="2" width="519" height="683" frameX="-27" frameY="-26" frameWidth="564" frameHeight="709"/>
+	<SubTexture name="santa idle in fear0002" x="950" y="2" width="519" height="687" frameX="-27" frameY="-22" frameWidth="564" frameHeight="709"/>
+	<SubTexture name="santa idle in fear0003" x="1473" y="2" width="538" height="687" frameX="-16" frameY="-22" frameWidth="564" frameHeight="709"/>
+	<SubTexture name="santa idle in fear0004" x="2015" y="2" width="538" height="696" frameX="-16" frameY="-13" frameWidth="564" frameHeight="709"/>
+	<SubTexture name="santa idle in fear0005" x="2557" y="2" width="564" height="696" frameX="0" frameY="-13" frameWidth="564" frameHeight="709"/>
+	<SubTexture name="santa idle in fear0006" x="3125" y="2" width="564" height="706" frameX="0" frameY="-3" frameWidth="564" frameHeight="709"/>
+	<SubTexture name="santa idle in fear0007" x="2" y="712" width="564" height="706" frameX="0" frameY="-3" frameWidth="564" frameHeight="709"/>
+	<SubTexture name="santa idle in fear0008" x="570" y="712" width="366" height="708" frameX="-105" frameY="-1" frameWidth="564" frameHeight="709"/>
+	<SubTexture name="santa idle in fear0009" x="940" y="712" width="366" height="709" frameX="-105" frameY="0" frameWidth="564" frameHeight="709"/>
+	<SubTexture name="santa idle in fear0010" x="940" y="712" width="366" height="709" frameX="-105" frameY="0" frameWidth="564" frameHeight="709"/>
+	<SubTexture name="santa idle in fear0011" x="940" y="712" width="366" height="709" frameX="-105" frameY="0" frameWidth="564" frameHeight="709"/>
+	<SubTexture name="santa idle in fear0012" x="940" y="712" width="366" height="709" frameX="-105" frameY="0" frameWidth="564" frameHeight="709"/>
+	<SubTexture name="santa idle in fear0013" x="940" y="712" width="366" height="709" frameX="-105" frameY="0" frameWidth="564" frameHeight="709"/>
+</TextureAtlas>

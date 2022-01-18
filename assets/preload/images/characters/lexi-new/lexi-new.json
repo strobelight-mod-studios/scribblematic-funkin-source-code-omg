@@ -1,0 +1,284 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				132,
+				182
+			],
+			"anim": "firstDeath",
+			"fps": 24,
+			"name": "Lexi Die",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-198,
+				-69
+			],
+			"anim": "deathConfirm",
+			"fps": 24,
+			"name": "Lexi Retry",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-35,
+				11
+			],
+			"anim": "danceLeft",
+			"fps": 24,
+			"name": "Lexi Idle",
+			"indices": [
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29
+			]
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-35,
+				11
+			],
+			"anim": "danceRight",
+			"fps": 24,
+			"name": "Lexi Idle",
+			"indices": [
+				30,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14
+			]
+		},
+		{
+			"offsets": [
+				-11,
+				-3
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"loop": false,
+			"name": "Lexi Left Miss"
+		},
+		{
+			"offsets": [
+				-9,
+				-4
+			],
+			"indices": [
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15
+			],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "Lexi Left"
+		},
+		{
+			"offsets": [
+				-42,
+				14
+			],
+			"indices": [
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15
+			],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "Lexi Right"
+		},
+		{
+			"offsets": [
+				-35,
+				11
+			],
+			"indices": [
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15
+			],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "Lexi Up"
+		},
+		{
+			"offsets": [
+				-50,
+				9
+			],
+			"indices": [
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15
+			],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "Lexi Down"
+		},
+		{
+			"offsets": [
+				-14,
+				10
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "scared",
+			"loop": false,
+			"name": "Lexi Fear"
+		},
+		{
+			"offsets": [
+				-52,
+				9
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"loop": false,
+			"name": "Lexi Down Miss"
+		},
+		{
+			"offsets": [
+				-36,
+				12
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUPmiss",
+			"loop": false,
+			"name": "Lexi Up Miss"
+		},
+		{
+			"offsets": [
+				-45,
+				13
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"loop": false,
+			"name": "Lexi Right Miss"
+		},
+		{
+			"offsets": [
+				-44,
+				1
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "hey",
+			"loop": false,
+			"name": "Lexi Hey"
+		},
+		{
+			"offsets": [
+				-195,
+				-69
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "deathLoop",
+			"loop": true,
+			"name": "Lexi Death Loop"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/lexi-new/Child",
+	"position": [
+		0,
+		190
+	],
+	"healthicon": "lexi-new",
+	"flip_x": true,
+	"healthbar_colors": [
+		255,
+		89,
+		227
+	],
+	"camera_position": [
+		30,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}
