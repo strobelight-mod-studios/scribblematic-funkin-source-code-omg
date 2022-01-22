@@ -1,7 +1,7 @@
 oswald-happy
 happymouse-painted
 taki
-demoncesar
+bf-demoncesar
 carol
 whitty
 hd-senpai-giddy
@@ -9,7 +9,7 @@ tankman
 mom
 dad
 gf-judge-v2
-oswald
+oswald-happy
 edd-r
 tord-r
 sky-annoyed

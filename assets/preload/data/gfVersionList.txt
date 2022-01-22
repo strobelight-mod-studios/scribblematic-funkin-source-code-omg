@@ -1,5 +1,4 @@
 gf
-speakers
-nothing
-speakers-bw
-gf-bf-bw
+gf-car
+gf-christmas
+gf-pixel

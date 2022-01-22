@@ -155,6 +155,7 @@ class MP4Handler
 
 	function update(e:Event)
 	{
+		/*
 		if (FlxG.keys.justPressed.ENTER || FlxG.keys.justPressed.SPACE)
 		{
 			if (bitmap.isPlaying)
@@ -162,6 +163,7 @@ class MP4Handler
 				onVLCComplete();
 			}
 		}
+		*/
 
 		bitmap.volume = FlxG.sound.volume + 0.3; // shitty volume fix. then make it louder.
 

@@ -261,6 +261,7 @@ class ModchartState
 		switch (songLowercase) {
 			case 'dad-battle': songLowercase = 'dadbattle';
 			case 'philly-nice': songLowercase = 'philly';
+			case "rabbit's-luck": songLowercase = "rabbit's-luck-hard";
 		}
 
 		var data:BitmapData = BitmapData.fromFile(Sys.getCwd() + "assets/data/" + songLowercase + '/' + spritePath + ".png");

@@ -52,13 +52,11 @@ class DemoState extends MusicBeatState
 
 		lolText = new FlxText(0, 0, FlxG.width - 100, 26);
 		lolText.setFormat(Paths.font("lyrics.ttf"), 26, FlxColor.WHITE, CENTER);
-		lolText.text = "Hey there! It's a message from the coder (teotm).\n
-        Please notice that you're playing the demo of the version of the mod. We need to add two more songs to Story Mode, and the mod will be complete (+bonus ones in Freeplay Mode).\n
-        If you have any questions about the mod or something ask me on Discord: teotm#9506\n
-        Oh, and also we're working on another mod Friday Night Knock-Knockin'! Vs. Edgar The Lodger from Knock-Knock (it's a video game) with SaraHericProductions, Kaskudek and chill grunt.\n
-		I apologize for the huge delay, I hope you understand. Anyways, go enjoy the mod.\n\n\n
-		
-		
+		lolText.text = "Yo! It's nother message from the coder.\n
+        I made a mod update cause I wanted to add sussybakaguyidkwhy's (Goblock's new name) Rabbit's Luck BETADCIU.\n
+        Message to GTAB: I'm gonna add your Glitched Gem BETADCIU, but please, just be patient, ok?\n
+		Due to my private and Knock-Knockin' reasons, this mod will have bigger time intervals between the updates after Glitched Gem BETADCIU update.\n
+		- Message signed by teotm\n\n
 		";
 		lolText.borderColor = FlxColor.BLACK;
 		lolText.borderSize = 3;

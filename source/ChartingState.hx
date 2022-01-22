@@ -73,9 +73,9 @@ class ChartingState extends MusicBeatState
 	var curRenderedNotes:FlxTypedGroup<Note>;
 	var curRenderedSustains:FlxTypedGroup<FlxSprite>;
 
-	var hiddenSongs:Array<String> =['corn-maze', 'corn maze' ,'48-12-25', '48 12 25', 'algebra']; // the song Kaskudek told me to chart + algebra cover? (interesting)
+	var hiddenSongs:Array<String> =['corn-maze', 'corn maze' ,'48-12-25', '48 12 25', 'algebra', 'algebra-strobelight', 'algebra strobelight']; // the song Kaskudek told me to chart Corn Maze + Maybe doing Algebra cover
 	var hiddenSongsCheesy:Array<String> =['killer-scream', 'killer scream']; // Killer Scream would be the in the same easter egg as Corn Maze, but since Cheesy wanted somethin "original", here it goes.
-	var hiddenSongs2:Array<String> =["rabbit's-luck", "rabbit's luck", "rabbit's-luck-hard", "rabbit's luck hard"]; // Goblock's BETADCIUs
+	var hiddenSongs2:Array<String> =[]; // Goblock's BETADCIUs
 
 	var gridBG:FlxSprite;
 

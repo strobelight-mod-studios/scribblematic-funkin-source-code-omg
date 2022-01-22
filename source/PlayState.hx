@@ -297,6 +297,7 @@ class PlayState extends MusicBeatState
 		switch (songLowercase) {
 			case 'dad-battle': songLowercase = 'dadbattle';
 			case 'philly-nice': songLowercase = 'philly';
+			case "rabbit's-luck": songLowercase = "rabbit's-luck-hard";
 		}
 		
 		removedVideo = false;
@@ -706,6 +707,7 @@ class PlayState extends MusicBeatState
 				case 11: gfCheck = 'gf-bw';
 				case 12: gfCheck = 'gf-and-bf';
 				case 13: gfCheck = 'gf-and-bf-bw';
+				case 14: gfCheck = 'gf-judgev2';
 			}
 		} else {gfCheck = SONG.gfVersion;}
 
@@ -726,6 +728,8 @@ class PlayState extends MusicBeatState
 				curGf = 'speakers-bw';
 			case 'gf-bf-bw':
 				curGf = 'gf-bf-bw';
+			case 'gf-judgev2':
+				curGf = 'gf-judgev2';
 			case 'gf-bw':
 				curGf = 'gf-bw';
 			case 'gf-and-bf':
@@ -742,6 +746,13 @@ class PlayState extends MusicBeatState
 		dad = new Character(100, 100, SONG.player2);
 
 		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
+
+		switch(SONG.gfVersion)
+		{
+			case 'gf-judgev2':
+				gf.x += 50;
+				gf.y += 80;
+		}
 
 		switch (SONG.player2)
 		{
@@ -797,6 +808,12 @@ class PlayState extends MusicBeatState
 				dad.y -= 170;
 				camPos.x += -120;
 			case 'zardy' | 'zardyButDark':
+			case 'oswald-happy':
+				dad.x -= 70;
+				dad.y += 200;
+			case 'oswald':
+				dad.x -= 70;
+				dad.y += 200;
 			if (dad.isCustom) // I'm not fully copy-pasting it. But anyways, thanks Blantados.
 			{
 				dad.x += dad.positionArray[0];
@@ -870,6 +887,8 @@ class PlayState extends MusicBeatState
 
 		switch (SONG.player1)
 		{
+			case 'happymouse-painted':
+				boyfriend.y -= 300;
 			default:
 				if (boyfriend.isCustom)
 				{
@@ -1301,6 +1320,7 @@ class PlayState extends MusicBeatState
 		switch (songLowercase) {
 			case 'dad-battle': songLowercase = 'dadbattle';
 			case 'philly-nice': songLowercase = 'philly';
+			case "rabbit's-luck": songLowercase = "rabbit's-luck-hard";
 		}
 		if (executeModchart)
 		{
@@ -1605,6 +1625,7 @@ class PlayState extends MusicBeatState
 				switch (songLowercase) {
 					case 'dad-battle': songLowercase = 'dadbattle';
 					case 'philly-nice': songLowercase = 'philly';
+					case "rabbit's-luck": songLowercase = "rabbit's-luck-hard";
 				}
 
 			var songPath = 'assets/data/' + songLowercase + '/';
@@ -2888,6 +2909,7 @@ class PlayState extends MusicBeatState
 			switch (songHighscore) {
 				case 'Dad-Battle': songHighscore = 'Dadbattle';
 				case 'Philly-Nice': songHighscore = 'Philly';
+				case "Rabbit's-Luck": songHighscore = "Rabbit's-Luck-Hard";
 			}
 
 			#if !switch
@@ -2956,6 +2978,7 @@ class PlayState extends MusicBeatState
 					switch (songFormat) {
 						case 'Dad-Battle': songFormat = 'Dadbattle';
 						case 'Philly-Nice': songFormat = 'Philly';
+						case "Rabbit's-Luck": songFormat = "Rabbit's-Luck-Hard";
 					}
 
 					var poop:String = Highscore.formatSong(songFormat, storyDifficulty);
@@ -4085,9 +4108,6 @@ class PlayState extends MusicBeatState
 			{
 				switch (curStep)
 				{
-					// dad = new Character(100, 100, SONG.player2);
-					// boyfriend = new Boyfriend(770, 450, SONG.player1);
-					// gf = new Character(400, 130, curGf);
 					case 640:
 						changeDadCharacter(100, 100, 'mom'); // Garrett
 					case 1664:
@@ -4106,6 +4126,68 @@ class PlayState extends MusicBeatState
 						changeDadCharacter(100, 400, 'aloe'); // Corrupted Playrobot
 					case 7984:
 						changeDadCharacter(100, 100, 'blantad'); // Angry Dave
+				}
+			}
+		}
+
+		if(!FlxG.save.data.betadciuSomeTrioModCharChange)
+		{
+			if (curSong == "Rabbit's-Luck")
+			{
+				switch (curStep)
+				{
+					// dad = new Character(100, 100, SONG.player2);
+					// boyfriend = new Boyfriend(770, 450, SONG.player1);
+					// gf = new Character(400, 130, curGf);
+					case 104:
+						dad.playAnim('lucky', true, false);
+					case 320:
+						changeDadCharacter(100, 100, 'taki');
+						changeBoyfriendCharacter(770, 450, 'bf-demoncesar');
+					case 352:
+						changeDadCharacter(100, 100, 'carol');
+						changeBoyfriendCharacter(770, 150, 'whitty');
+					case 384:
+						changeDadCharacter(100, 100, 'hd-senpai-giddy');
+						changeBoyfriendCharacter(770, 300, 'tankman');
+					case 446:
+						changeDadCharacter(100, 100, 'mom');
+						changeBoyfriendCharacter(770, 150, 'dad');
+					case 509:
+						changeDadCharacter(30, 300, 'oswald-happy');
+					case 546:
+						dad.playAnim('oldtimey', true, false);
+						gf.playAnim('spooked', true, false);
+					case 556:
+						dad.playAnim('danceLeft', true, false);
+					case 562:
+						gf.playAnim('danceLeft', true, false);
+						changeDadCharacter(100, 200, 'edd-r');
+						changeBoyfriendCharacter(770, 250, 'tord-r');
+					case 624:
+						changeDadCharacter(100, 100, 'sky-annoyed');
+						changeBoyfriendCharacter(770, 250, 'bf-sunday');
+					case 669:
+						changeDadCharacter(30, 300, 'oswald');
+					case 673:
+						dad.playAnim('notold', true, false);
+					case 688:
+						changeDadCharacter(200, 250, 'sonic-exe');
+					case 720:
+						changeBoyfriendCharacter(770, 450, 'sonic');
+					case 752:
+						changeDadCharacter(100, 200, 'majin');
+						changeBoyfriendCharacter(770, 450, 'bf');
+					case 784:
+						changeDadCharacter(100, 100, 'jeff');
+						changeBoyfriendCharacter(770, 300, 'huggy');
+					case 816:
+						changeDadCharacter(30, 300, 'oswald');
+					case 831:
+						dad.playAnim('hah', true, false);
+					case 848:
+						changeDadCharacter(100, 100, 'sadminnie');
+						changeBoyfriendCharacter(770, 50, 'sarvente');
 				}
 			}
 		}

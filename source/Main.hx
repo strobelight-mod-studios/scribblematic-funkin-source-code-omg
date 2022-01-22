@@ -27,9 +27,9 @@ class Main extends Sprite
 
 	public static var watermarks = true; // Whether to put Kade Engine liteartly anywhere
 	public static var isHidden:Bool = false;
-	public static var hiddenSongs:Array<String> = ['corn-maze', 'corn maze', '48-12-25', '48 12 25', 'algebra']; // the song Kaskudek told me to chart + algebra cover? (interesting)
+	public static var hiddenSongs:Array<String> = ['corn-maze', 'corn maze' ,'48-12-25', '48 12 25', 'algebra', 'algebra-strobelight', 'algebra strobelight']; // the song Kaskudek told me to chart + algebra cover? (interesting)
 	public static var hiddenSongsCheesy:Array<String> = ['killer-scream', 'killer scream']; // Separated this only because Cheesy wanted me to do so.
-	public static var hiddenSongs2:Array<String> = ["rabbit's-luck", "rabbit's luck", "rabbit's-luck-hard", "rabbit's luck hard"]; // Goblock's BETADCIUs
+	public static var hiddenSongs2:Array<String> = []; // Goblock's BETADCIUs
 	public static var gjToastManager:GJToastManager;
 
 	// You can pretty much ignore everything from here on - your code should go in your states.

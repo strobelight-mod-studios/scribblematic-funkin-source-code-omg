@@ -382,7 +382,7 @@ class GameJoltInfo extends FlxSubState
         "i found the funny - Cheesy 2022",
         "Invite me.... NOW!! - Chill Grunt 2022",
         "I choose 'Glasses' difficulty - teotm 2021",
-        "lmao - Goblock 2022",
+        "lmao - sussybakaguyidkwhy 2022",
         "Fuck this. I simp to Ina'nis now. - teotm 2022",
         "cum - Kaskudek 2022",
         "fun fact: lodger is a teenager - Kaskudek 2022",
@@ -390,11 +390,15 @@ class GameJoltInfo extends FlxSubState
         "Welcome, Master Cheeser. We hope you brought pizza. (x23 times) - Chill Grunt 2022",
         "pls don't kill me - teotm 2022",
         "i'm gonna brown - Kaskudek 2022",
-        "imma shit first - Goblock 2022",
+        "imma shit first - sussybakaguyidkwhy 2022",
         "internet fucked up - chessy 2021",
         "centimeter in fnf is worth 10,325 pixels - Kaskudek 2022",
         "Kaskudek x Air is canon folks - KaskudekJUNIOR 2022",
-        "Almost all of the funi text here are our private Discord server messages"
+        "Almost all of the funi text here are our private Discord server messages",
+        "Funfact, Kaskudek can't get corrupted by Pibby coruption, and normal corruption, cuz of of his life amulet - Kaskudek 2022",
+        "Kaskudek is also self aware that you can't beat Boyfriend - Kaskudek",
+        "If there's someone who likes making the overused Pibby corruption. Be aware that's impossible to make Kaskudek corrupted. Hell yeah! - teotm 2022",
+        "bruh tord experiment went wrong - teotm 2022"
     ];
 }
 
@@ -561,7 +565,7 @@ class GameJoltLogin extends MusicBeatSubstate
         }
         else
         {
-            cancelBox.y = 475;
+            cancelBox.y = 425;
             cancelBox.text = "Continue";
             loginButtons.add(logOutBox);
         }

@@ -54,6 +54,8 @@ class Character extends FlxSprite
 	public var isPlayer:Bool = false;
 	public var curCharacter:String = 'bf';
 	public var isCustom:Bool = false;
+	public var altAnim:String = '';
+	public var bfAltAnim:String = '';
 
 	public var iconColor:String;
 	public var noteSkin:String = PlayState.SONG.noteStyle;
@@ -145,7 +147,37 @@ class Character extends FlxSprite
 				addOffset('scared', -2, -17);
 
 				playAnim('danceRight');
+			case 'gf-judgev2':
+				frames = Paths.getSparrowAtlas('characters/other/GF_Tablev2');
 
+				iconColor = 'FFA5004D';
+
+				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
+				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
+				animation.addByPrefix('singRIGHT', 'GF Right Note', 24, false);
+				animation.addByPrefix('singUP', 'GF Up Note', 24, false);
+				animation.addByPrefix('singDOWN', 'GF Down Note', 24, false);
+				animation.addByIndices('sad', 'gf sad', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "", 24, false);
+				animation.addByIndices('danceLeft', 'GF Dancing Beat', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				animation.addByIndices('danceRight', 'GF Dancing Beat', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				animation.addByPrefix('spooked', 'GF_Spooked', 24);
+
+				addOffset('cheer', 170, 79);
+				addOffset('sad', 170, 63);
+				addOffset('danceLeft', 171, 73);
+				addOffset('danceRight', 171, 73);
+
+				addOffset("singLEFT", 171, 71);
+				addOffset("singRIGHT", 171, 70);
+				addOffset("singDOWN", 171, 69);
+				addOffset("singUP", 171, 74);
+
+				addOffset('spooked', 171, 70);
+
+				setGraphicSize(Std.int(width * 0.6));
+				updateHitbox();
+
+				playAnim('danceRight');
 			case 'gf-christmas':
 				frames = Paths.getSparrowAtlas('characters/gfChristmas');
 				iconColor = 'FFA5004D';
@@ -206,7 +238,7 @@ class Character extends FlxSprite
 				updateHitbox();
 				antialiasing = false;
 
-			case 'dad' | 'blash' | 'huh' | 'blantad' | 'tabi' | 'tabi-bw' | 'hd-senpai-happy' | 'hd-senpai-angry' | 'hd-spirit':
+			case 'dad' | 'blash' | 'huh' | 'blantad' | 'tabi' | 'tabi-bw' | 'hd-senpai-happy' | 'hd-senpai-angry' | 'hd-spirit' | 'carol':
 				// DAD ANIMATION LOADING CODE
 				switch (curCharacter)
 				{
@@ -251,6 +283,9 @@ class Character extends FlxSprite
 					case 'hd-spirit':
 						iconColor = 'FFFF3C6E';
 						frames = Paths.getSparrowAtlas('characters/other/HD_SPIRIT');
+					case 'carol':
+						iconColor = 'FF282833';
+						frames = Paths.getSparrowAtlas('characters/other/Carol');
 				}
 				animation.addByPrefix('idle', 'Dad idle dance', 24);
 				animation.addByPrefix('singUP', 'Dad Sing Note UP', 24);
@@ -323,6 +358,33 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 20, -160);
 
 				playAnim('idle');
+			case 'dad-gf-judgev2':
+				frames = Paths.getSparrowAtlas('characters/other/GF_Tablev2');
+
+				iconColor = 'FFA5004D';
+
+				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
+				animation.addByPrefix('singRIGHT', 'GF Right Note', 24, false);
+				animation.addByPrefix('singUP', 'GF Up Note', 24, false);
+				animation.addByPrefix('singDOWN', 'GF Down Note', 24, false);
+				animation.addByIndices('danceLeft', 'GF Dancing Beat', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				animation.addByIndices('danceRight', 'GF Dancing Beat', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				animation.addByPrefix('spooked', 'GF_Spooked', 24);
+
+				addOffset('danceLeft', 171, 73);
+				addOffset('danceRight', 171, 73);
+
+				addOffset("singLEFT", 171, 71);
+				addOffset("singRIGHT", 171, 70);
+				addOffset("singDOWN", 171, 69);
+				addOffset("singUP", 171, 74);
+
+				addOffset('spooked', 171, 70);
+
+				setGraphicSize(Std.int(width * 0.6));
+				updateHitbox();
+
+				playAnim('danceRight');
 			case 'bf-ayana':
 				frames = Paths.getSparrowAtlas('characters/other/playableexGF');
 				iconColor = 'FF64FFC1';
@@ -598,6 +660,48 @@ class Character extends FlxSprite
 				addOffset('deathConfirm', -37);
 				playAnim('firstDeath');
 				*/
+
+				flipX = true;
+			case 'bf-demoncesar':
+				frames = Paths.getSparrowAtlas('characters/other/demonCesar');
+				iconColor = 'FFE353C8';
+				// noteSkin = 'fever';
+
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
+				animation.addByPrefix('hey', 'BF HEY', 24, false);
+				animation.addByPrefix('transition', 'BF Transition', 24, false);
+
+				animation.addByPrefix('firstDeath', "BF dies", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
+
+				animation.addByPrefix('scared', 'BF idle shaking', 24);
+
+				addOffset('idle', -5);
+				addOffset("singUP", -61, 13);
+				addOffset("singRIGHT", -75, -10);
+				addOffset("singLEFT", -15, -3);
+				addOffset("singDOWN", -39, -84);
+				addOffset("singUPmiss", -64, 6);
+				addOffset("singRIGHTmiss", -74, -19);
+				addOffset("singLEFTmiss", -16, -4);
+				addOffset("singDOWNmiss", -36, -84);
+				addOffset("hey", -54, 1);
+				addOffset("transition", -54, 1);
+				addOffset('firstDeath', 37, 11);
+				addOffset('deathLoop', 37, 5);
+				addOffset('deathConfirm', 37, 69);
+				addOffset('scared', -54, -12);
+
+				playAnim('idle');
 
 				flipX = true;
 			case 'bf-christmas':
@@ -1167,14 +1271,31 @@ class Character extends FlxSprite
 				addOffset("singRIGHT", -71,-10);
 				addOffset("singUP", 137, 147);
 				addOffset("singUP-alt", 137, 147);
-				addOffset("singLEFT", 39,-1);
-				
+				addOffset("singLEFT", 39, -1);
 				
 				if (PlayState.SONG.song.toLowerCase() == "valentine"){
 					playAnim('idle-alt');
 				}else{
 					playAnim('idle');
 				}
+			case 'bf-sunday':
+				iconColor ='FF5E9499';
+				frames = Paths.getSparrowAtlas('characters/other/sunday_assets');
+				animation.addByPrefix('idle-alt', 'sunday alt idle', 24, true);
+				animation.addByPrefix('idle', 'sunday idle', 24, true);
+				animation.addByPrefix('singUP', 'sunday up', 24, false);
+				animation.addByPrefix('singUP-alt', 'sunday alt up', 24, false);
+				animation.addByPrefix('singDOWN', 'sunday down', 24, false);
+				animation.addByPrefix('singLEFT', 'sunday left', 24, false);
+				animation.addByPrefix('singRIGHT', 'sunday right', 24, false);
+
+				addOffset('idle', 1, 1);
+				addOffset('idle-alt', 28, 3);
+				addOffset("singDOWN", 117, -27);
+				addOffset("singRIGHT", -11, -1);
+				addOffset("singUP", 125, 147);
+				addOffset("singUP-alt", 125, 147);
+				addOffset("singLEFT", 30, -10);
 			case 'sky-happy':
 				frames = Paths.getSparrowAtlas('characters/other/sky_assets');
 				iconColor = 'FF9C6ECC';
@@ -1434,7 +1555,7 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 			case 'hd-senpai-giddy':
-				frames = Paths.getSparrowAtlas('characters/HD_SENPAI_GIDDY');
+				frames = Paths.getSparrowAtlas('characters/other/HD_SENPAI_GIDDY');
 				iconColor = 'FFFFAA6F';
 							
 				animation.addByPrefix('idle', 'Dad idle dance', 24, false);
@@ -1454,6 +1575,54 @@ class Character extends FlxSprite
 				addOffset("singLEFT", -20, 10);
 
 				playAnim('idle');
+			case 'whitty':
+				frames = Paths.getSparrowAtlas('characters/other/WhittySprites');
+				iconColor = 'FF1D1E35';
+				animation.addByPrefix('idle', 'Idle', 24);
+				animation.addByPrefix('singUP', 'Sing Up', 24);
+				animation.addByPrefix('singRIGHT', 'Sing Right', 24);
+				animation.addByPrefix('singDOWN', 'Sing Down', 24);
+				animation.addByPrefix('singLEFT', 'Sing Left', 24);
+
+				addOffset('idle', 0,0 );
+				addOffset("singUP", -6, 50);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, -30);
+			case 'taki':
+				frames = Paths.getSparrowAtlas('characters/other/taki_assets');
+				iconColor = 'FFD34470';
+				// noteSkin = 'taki';
+
+				animation.addByPrefix('idle', 'takiidle', 24, true);
+				animation.addByPrefix('singUP', 'takiup', 24, false);
+				animation.addByPrefix('singDOWN', 'takidown', 24, false);
+				animation.addByPrefix('singLEFT', 'takileft', 24, false);
+				animation.addByPrefix('singRIGHT', 'takiright', 24, false);
+
+				addOffset("idle", 0, 0);
+				addOffset("singUP", -5, -13);
+				addOffset("singRIGHT", 10, -10);
+				addOffset("singLEFT", 0, -10);
+				addOffset("singDOWN", 30, -50);
+
+				playAnim('idle');
+			case 'majin':
+				frames = Paths.getSparrowAtlas('characters/other/SonicFunAssets');
+				iconColor = 'FF3C008A';
+				animation.addByPrefix('idle', 'SONICFUNIDLE', 24);
+				animation.addByPrefix('singUP', 'SONICFUNUP', 24);
+				animation.addByPrefix('singRIGHT', 'SONICFUNRIGHT', 24);
+				animation.addByPrefix('singDOWN', 'SONICFUNDOWN', 24);
+				animation.addByPrefix('singLEFT', 'SONICFUNLEFT', 24);
+
+				addOffset('idle', -21, 66);
+				addOffset("singUP", 21, 70);
+				addOffset("singRIGHT", -86, 15);
+				addOffset("singLEFT", 393, -60);
+				addOffset("singDOWN", 46, -80);
+
+				playAnim('idle');
 			case 'jeff':
 				// DAD ANIMATION LOADING CODE
 				frames = Paths.getSparrowAtlas('characters/other/jeffsprite','shared');
@@ -1471,7 +1640,7 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 32, -42);
 
 				playAnim('idle');
-			case 'lexi-new' | 'aoki-new' | 'oswald' | 'oswald-happy' | 'gf-judgev2' | 'lodger' | 'freddy':
+			case 'lexi-new' | 'aoki-new' | 'oswald' | 'oswald-happy' | 'lodger' | 'freddy':
 				// New Lexi doesn't work for some reason. No idea why. I only checked new Aoki and Lodger for test purposes only.
 				// bcuz sometimes i just wanna use the psych jsons without the lag. was totally worth implementing.
 				isCustom = true;
@@ -1736,13 +1905,33 @@ class Character extends FlxSprite
 						else
 							playAnim('danceLeft');
 					}
-				case 'spooky' | 'kb' | 'sky-happy' | 'sky-annoyed' | 'sky-annoyed-bw' | 'sayori' | 'sayori-bw' | 'oswald-happy' | 'oswald':
+				case 'spooky' | 'kb' | 'sky-happy' | 'sky-annoyed' | 'sky-annoyed-bw' | 'sayori' | 'sayori-bw' | 'oswald-happy' | 'oswald' | 'dad-gf-judgev2':
 					danced = !danced;
 
 					if (danced)
 						playAnim('danceRight');
 					else
 						playAnim('danceLeft');
+				case 'gf-judgev2':
+					if (animation.curAnim.name != 'spooked')
+					{
+						danced = !danced;
+		
+						if (isPlayer)
+						{
+							if (danced)
+								playAnim('danceRight' + bfAltAnim);
+							else
+								playAnim('danceLeft' + bfAltAnim);
+						}
+						else
+						{
+							if (danced)
+								playAnim('danceRight' + altAnim);
+							else
+								playAnim('danceLeft' + altAnim);
+						}	
+					}
 				default:
 					playAnim('idle');
 			}

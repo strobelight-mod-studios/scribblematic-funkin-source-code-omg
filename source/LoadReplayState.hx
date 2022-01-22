@@ -156,9 +156,11 @@ class LoadReplayState extends MusicBeatState
 					switch (songFormat) {
 						case 'Dad-Battle': songFormat = 'Dadbattle';
 						case 'Philly-Nice': songFormat = 'Philly';
+						case "Rabbit's-Luck": songFormat = "Rabbit's-Luck-Hard";
 						// Replay v1.0 support
 						case 'dad-battle': songFormat = 'Dadbattle';
 						case 'philly-nice': songFormat = 'Philly';
+						case "rabbit-s-luck": songFormat = "Rabbit's-Luck-Hard";
 					}
 
 					var poop:String = Highscore.formatSong(songFormat, PlayState.rep.replay.songDiff);

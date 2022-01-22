@@ -322,6 +322,7 @@ class StoryMenuState extends MusicBeatState
 					switch (songFormat) {
 						case 'Dad-Battle': songFormat = 'Dadbattle';
 						case 'Philly-Nice': songFormat = 'Philly';
+						case "Rabbit's-Luck": songFormat = "Rabbit's-Luck-Hard";
 					}
 
 					var poop:String = Highscore.formatSong(songFormat, curDifficulty);

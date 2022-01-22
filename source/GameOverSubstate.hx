@@ -41,6 +41,8 @@ class GameOverSubstate extends MusicBeatSubstate
 				daBf = 'girlfriend-playable';
 			case 'girlfriend-playable-bw':
 				daBf = 'girlfriend-playable-bw';
+			case 'bf-demoncesar':
+				daBf = 'bf-demoncesar';
 			case 'ena' | 'ǝna' | 'jena' | 'ina' | 'enna' | 'ayna' | 'chaina' /*easter egg purposes only*/:
 				daBf = 'ena';
 			default:

@@ -1,6 +1,8 @@
 package;
 
+import flixel.FlxG;
 import flixel.FlxSprite;
+import openfl.utils.Assets as OpenFlAssets;
 
 #if windows
 import Sys;
@@ -83,6 +85,7 @@ class HealthIcon extends FlxSprite
 		animation.add('girlfriend-christmas',   [16, 31],   0, false, isPlayer);
 		animation.add('girlfriend-playable',    [16, 31],   0, false, isPlayer);
 		animation.add('gf-judgev2',             [16, 31],   0, false, isPlayer);
+		animation.add('dad-gf-judgev2',         [16, 16],   0, false, isPlayer);
 		animation.add('parents-christmas',      [17, 18],   0, false, isPlayer);
 		animation.add('monster',                [19, 20],   0, false, isPlayer);
 		animation.add('bf-pixel',               [21, 26],   0, false, isPlayer);
@@ -117,7 +120,9 @@ class HealthIcon extends FlxSprite
 		animation.add('tabi',                   [90, 91],   0, false, isPlayer);
 		animation.add('bf-ayana',               [92, 93],   0, false, isPlayer);
 		animation.add('sunday',                 [94, 95],   0, false, isPlayer);
+		animation.add('bf-sunday',              [94, 95],   0, false, isPlayer);
 		animation.add('sky-happy',              [96, 97],   0, false, isPlayer);
+		animation.add('sky-annoyed',            [96, 97],   0, false, isPlayer);
 		animation.add('freddy',                 [98, 99],   0, false, isPlayer);
 		animation.add('huggy',                  [100, 101], 0, false, isPlayer);
 		animation.add('sadmouse',               [102, 103], 0, false, isPlayer);
@@ -145,6 +150,8 @@ class HealthIcon extends FlxSprite
 		animation.add('happymouse2-painted',    [136, 137], 0, false, isPlayer);
 		animation.add('happymouse3-painted',    [136, 136], 0, false, isPlayer);
 		animation.add('happymouse2',            [138, 139], 0, false, isPlayer);
+		animation.add('tord-r',                 [142, 143], 0, false, isPlayer);
+		animation.add('edd-r',                  [146, 147], 0, false, isPlayer);
 		animation.add('blantad',                [148, 149], 0, false, isPlayer);
 		animation.add('lodger',                 [150, 151], 0, false, isPlayer);
 		animation.add('oswald',                 [152, 153], 0, false, isPlayer);
@@ -154,6 +161,13 @@ class HealthIcon extends FlxSprite
 		animation.add('sayori',                 [158, 159], 0, false, isPlayer);
 		animation.add('agoti',                  [160, 161], 0, false, isPlayer);
 		animation.add('bf-agoti',               [160, 161], 0, false, isPlayer);
+		animation.add('hd-senpai-giddy',        [166, 166], 0, false, isPlayer);
+		animation.add('jeff',                   [170, 171], 0, false, isPlayer);
+		animation.add('bf-demoncesar',          [172, 173], 0, false, isPlayer);
+		animation.add('taki',                   [174, 175], 0, false, isPlayer);
+		animation.add('carol',                  [176, 177], 0, false, isPlayer);
+		animation.add('whitty',                 [178, 179], 0, false, isPlayer);
+		animation.add('majin',                  [180, 181], 0, false, isPlayer);
 
 		// ENA's aliases:
 		animation.add('ǝna',                  [40, 41],   0, false, isPlayer);
