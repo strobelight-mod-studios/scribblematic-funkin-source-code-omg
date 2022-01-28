@@ -1,5 +1,2 @@
 stage
 roofDawnParkour
-SiIvaGunner
-eddhouse
-street1

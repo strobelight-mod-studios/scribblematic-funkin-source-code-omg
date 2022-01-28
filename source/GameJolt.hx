@@ -385,6 +385,7 @@ class GameJoltInfo extends FlxSubState
         "lmao - sussybakaguyidkwhy 2022",
         "Fuck this. I simp to Ina'nis now. - teotm 2022",
         "cum - Kaskudek 2022",
+        "If you'll look up in the source code in GameJolt.hx, look up for this text and check the one above this one and you'll basically see our time gen z humor. - teotm 2022",
         "fun fact: lodger is a teenager - Kaskudek 2022",
         "I love playing with clay - Chill Grunt 2022",
         "Welcome, Master Cheeser. We hope you brought pizza. (x23 times) - Chill Grunt 2022",

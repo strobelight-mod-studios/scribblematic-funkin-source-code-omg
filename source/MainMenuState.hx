@@ -43,7 +43,7 @@ class MainMenuState extends MusicBeatState
 
 	public static var kadeEngineVer:String = "1.5.4";
 	public static var gameVer:String = "0.2.7.1";
-	public static var someTrio:String = "2nd demo - Rabbit's Luck Update";
+	public static var someTrio:String = "3rd demo - Glitched Gem Update";
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;

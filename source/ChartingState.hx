@@ -76,6 +76,7 @@ class ChartingState extends MusicBeatState
 	var hiddenSongs:Array<String> =['corn-maze', 'corn maze' ,'48-12-25', '48 12 25', 'algebra', 'algebra-strobelight', 'algebra strobelight']; // the song Kaskudek told me to chart Corn Maze + Maybe doing Algebra cover
 	var hiddenSongsCheesy:Array<String> =['killer-scream', 'killer scream']; // Killer Scream would be the in the same easter egg as Corn Maze, but since Cheesy wanted somethin "original", here it goes.
 	var hiddenSongs2:Array<String> =[]; // Goblock's BETADCIUs
+	var hiddenCanonSongs:Array<String> =['shining']; // Adding these songs to story mode later
 
 	var gridBG:FlxSprite;
 
@@ -1479,6 +1480,10 @@ class ChartingState extends MusicBeatState
 		else if (Main.hiddenSongs2.contains(song.toLowerCase()) && !Main.isHidden)
 		{
 			LoadingState.loadAndSwitchState(new GreenGuyState());
+		}
+		else if (Main.hiddenCanonSongs.contains(song.toLowerCase()) && !Main.isHidden)
+		{
+			LoadingState.loadAndSwitchState(new CanonSecretSongState());
 		}
 		else
 		{

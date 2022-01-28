@@ -103,6 +103,7 @@ class HealthIcon extends FlxSprite
 		animation.add('paps',                   [43, 44],   0, false, isPlayer);
 		animation.add('kb',                     [45, 46],   0, false, isPlayer);
 		animation.add('zardyButDark',           [47, 48],   0, false, isPlayer);
+		animation.add('emerald',                [50, 51],   0, false, isPlayer);
 		animation.add('BOCHEN',                 [64, 65],   0, false, isPlayer);
 		animation.add('bf-bbpanzu',             [66, 67],   0, false, isPlayer);
 		animation.add('bbdead',                 [67, 67],   0, false, isPlayer);
@@ -168,6 +169,38 @@ class HealthIcon extends FlxSprite
 		animation.add('carol',                  [176, 177], 0, false, isPlayer);
 		animation.add('whitty',                 [178, 179], 0, false, isPlayer);
 		animation.add('majin',                  [180, 181], 0, false, isPlayer);
+		animation.add('GTAB',                   [188, 189], 0, false, isPlayer);
+		animation.add('hypno-shiny',            [190, 191], 0, false, isPlayer);
+		animation.add('hypno',                  [192, 193], 0, false, isPlayer);
+		animation.add('hypno-two',              [194, 194], 0, false, isPlayer);
+		animation.add('hypno-two-shiny',        [195, 195], 0, false, isPlayer);
+		animation.add('cesar',                  [196, 197], 0, false, isPlayer);
+		animation.add('bambi-piss-3d',          [198, 199], 0, false, isPlayer);
+		animation.add('coralie',                [200, 201], 0, false, isPlayer);
+		animation.add('beepie-normal',          [202, 203], 0, false, isPlayer);
+		animation.add('gf-ssn',                 [204, 204], 0, false, isPlayer);
+		animation.add('gold',                   [205, 205], 0, false, isPlayer);
+		animation.add('gold-side',              [205, 205], 0, false, isPlayer);
+		animation.add('corpoal-pig',            [206, 207], 0, false, isPlayer);
+		animation.add('red-ab',                 [208, 209], 0, false, isPlayer);
+		animation.add('pig',                    [210, 211], 0, false, isPlayer);
+		animation.add('cj',                     [212, 213], 0, false, isPlayer);
+		animation.add('ruby',                   [214, 215], 0, false, isPlayer);
+		animation.add('natsuki',                [216, 217], 0, false, isPlayer);
+		animation.add('yuri-crazy',             [218, 219], 0, false, isPlayer);
+		animation.add('exe',                    [220, 221], 0, false, isPlayer);
+		animation.add('bf-exe',                 [220, 221], 0, false, isPlayer);
+		animation.add('sonic2',                 [222, 223], 0, false, isPlayer);
+		animation.add('bf-pibby',               [224, 225], 0, false, isPlayer);
+		animation.add('hank',                   [226, 227], 0, false, isPlayer);
+		animation.add('bf-hank',                [226, 227], 0, false, isPlayer);
+		animation.add('steven',                 [228, 229], 0, false, isPlayer);
+		animation.add('bipolarmouse',           [230, 231], 0, false, isPlayer);
+		animation.add('bipolarmouse-painted',   [230, 231], 0, false, isPlayer);
+		animation.add('meri-sad',               [232, 233], 0, false, isPlayer);
+		animation.add('blues',                  [244, 245], 0, false, isPlayer);
+		animation.add('red',                    [248, 249], 0, false, isPlayer);
+		animation.add('tosslerhappy',           [252, 253], 0, false, isPlayer);
 
 		// ENA's aliases:
 		animation.add('ǝna',                  [40, 41],   0, false, isPlayer);

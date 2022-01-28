@@ -1,0 +1,111 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				3,
+				0
+			],
+			"loop": false,
+			"anim": "idle",
+			"fps": 24,
+			"name": "cj idle",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-36,
+				34
+			],
+			"loop": false,
+			"anim": "singUP",
+			"fps": 24,
+			"name": "cjUP",
+			"indices": []
+		},
+		{
+			"offsets": [
+				27,
+				10
+			],
+			"loop": false,
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "cjLEFT",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-38,
+				39
+			],
+			"loop": false,
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "cjRIGHT",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-53,
+				-17
+			],
+			"loop": false,
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "cjDOWN",
+			"indices": []
+		},
+		{
+			"offsets": [
+				592,
+				226
+			],
+			"loop": false,
+			"anim": "INTRO",
+			"fps": 24,
+			"name": "cj intro",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-33,
+				31
+			],
+			"loop": false,
+			"anim": "SINGLE HA",
+			"fps": 24,
+			"name": "cj singleha",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-33,
+				31
+			],
+			"loop": false,
+			"anim": "DOUBLE HA",
+			"fps": 24,
+			"name": "cj doubleha",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/cj/cj_assets",
+	"position": [
+		30,
+		-30
+	],
+	"healthicon": "cj",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		75,
+		255
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

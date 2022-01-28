@@ -333,6 +333,10 @@ class TitleState extends MusicBeatState
 					{
 						FlxG.switchState(new GameJoltLogin());
 					}
+					else
+					{
+						FlxG.switchState(new DemoState());
+					}
 				}
 				
 				http.onError = function (error) {

@@ -52,11 +52,10 @@ class DemoState extends MusicBeatState
 
 		lolText = new FlxText(0, 0, FlxG.width - 100, 26);
 		lolText.setFormat(Paths.font("lyrics.ttf"), 26, FlxColor.WHITE, CENTER);
-		lolText.text = "Yo! It's nother message from the coder.\n
-        I made a mod update cause I wanted to add sussybakaguyidkwhy's (Goblock's new name) Rabbit's Luck BETADCIU.\n
-        Message to GTAB: I'm gonna add your Glitched Gem BETADCIU, but please, just be patient, ok?\n
-		Due to my private and Knock-Knockin' reasons, this mod will have bigger time intervals between the updates after Glitched Gem BETADCIU update.\n
-		- Message signed by teotm\n\n
+		lolText.text = "Sup! You should already know who wrote this message.\n
+        Ok so, here's some info about this update. I added GabTheAngryBird's Glitched Gem BETADCIU. Finally!\n
+		Info about next update: You'll have to wait like a long time for a next update cause I'm working on Vs. Lodger mod and it's my current objective for now.\n
+		If you want a next Some Trio update, wait until Friday Night Knock-Knockin' 1st demo (FNKK) releases. If it does, that means that we may go back working on Some Trio.\n\n
 		";
 		lolText.borderColor = FlxColor.BLACK;
 		lolText.borderSize = 3;
