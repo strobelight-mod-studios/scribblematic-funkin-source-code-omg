@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="vickyPibby_assest.png">
+	<!-- Created with Adobe Animate version 21.0.1.37179 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="vicky laugh instance 10000" x="0" y="0" width="442" height="648"/>
+	<SubTexture name="vicky laugh instance 10001" x="442" y="0" width="442" height="648"/>
+	<SubTexture name="vicky laugh instance 10002" x="884" y="0" width="442" height="648"/>
+	<SubTexture name="vicky laugh instance 10003" x="1326" y="0" width="442" height="648"/>
+	<SubTexture name="vicky laugh instance 10004" x="1768" y="0" width="442" height="648"/>
+	<SubTexture name="vicky pibby down instance 10000" x="2210" y="0" width="605" height="480"/>
+	<SubTexture name="vicky pibby down instance 10001" x="2815" y="0" width="605" height="480"/>
+	<SubTexture name="vicky pibby down instance 10002" x="3420" y="0" width="605" height="480"/>
+	<SubTexture name="vicky pibby down instance 10003" x="0" y="648" width="605" height="480"/>
+	<SubTexture name="vicky pibby down instance 10004" x="3420" y="0" width="605" height="480"/>
+	<SubTexture name="vicky pibby down instance 10005" x="0" y="648" width="605" height="480"/>
+	<SubTexture name="vicky pibby down instance 10006" x="3420" y="0" width="605" height="480"/>
+	<SubTexture name="vicky pibby down instance 10007" x="0" y="648" width="605" height="480"/>
+	<SubTexture name="vicky pibby down instance 10008" x="3420" y="0" width="605" height="480"/>
+	<SubTexture name="vicky pibby down instance 10009" x="0" y="648" width="605" height="480"/>
+	<SubTexture name="vicky pibby down instance 10010" x="3420" y="0" width="605" height="480"/>
+	<SubTexture name="vicky pibby down instance 10011" x="0" y="648" width="605" height="480"/>
+	<SubTexture name="vicky pibby down instance 10012" x="3420" y="0" width="605" height="480"/>
+	<SubTexture name="vicky pibby idle instance 10000" x="605" y="648" width="557" height="552"/>
+	<SubTexture name="vicky pibby idle instance 10001" x="1162" y="648" width="551" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby idle instance 10002" x="1713" y="648" width="546" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby idle instance 10003" x="2259" y="648" width="542" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby idle instance 10004" x="2801" y="648" width="537" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby idle instance 10005" x="3338" y="648" width="535" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby idle instance 10006" x="0" y="1200" width="533" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby idle instance 10007" x="533" y="1200" width="533" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby idle instance 10008" x="1066" y="1200" width="534" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby idle instance 10009" x="533" y="1200" width="533" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby idle instance 10010" x="1066" y="1200" width="534" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby idle instance 10011" x="533" y="1200" width="533" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby idle instance 10012" x="1066" y="1200" width="534" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby idle instance 10013" x="533" y="1200" width="533" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby idle instance 10014" x="1066" y="1200" width="534" height="552" frameX="0" frameY="0" frameWidth="557" frameHeight="552"/>
+	<SubTexture name="vicky pibby left instance 10000" x="1600" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10001" x="2200" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10002" x="2800" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10003" x="3400" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10004" x="2800" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10005" x="3400" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10006" x="2800" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10007" x="3400" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10008" x="2800" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10009" x="3400" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10010" x="2800" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10011" x="3400" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10012" x="2800" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10013" x="3400" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby left instance 10014" x="2800" y="1200" width="600" height="531"/>
+	<SubTexture name="vicky pibby right instance 10000" x="0" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby right instance 10001" x="570" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby right instance 10002" x="1140" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby right instance 10003" x="1710" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby right instance 10004" x="1140" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby right instance 10005" x="1710" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby right instance 10006" x="1140" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby right instance 10007" x="1710" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby right instance 10008" x="1140" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby right instance 10009" x="1710" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby right instance 10010" x="1140" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby right instance 10011" x="1710" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby right instance 10012" x="1140" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby right instance 10013" x="1710" y="1752" width="570" height="619"/>
+	<SubTexture name="vicky pibby up instance 10000" x="2280" y="1752" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10001" x="2772" y="1752" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10002" x="3264" y="1752" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10003" x="0" y="2410" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10004" x="3264" y="1752" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10005" x="0" y="2410" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10006" x="3264" y="1752" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10007" x="0" y="2410" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10008" x="3264" y="1752" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10009" x="0" y="2410" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10010" x="3264" y="1752" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10011" x="0" y="2410" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10012" x="3264" y="1752" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10013" x="0" y="2410" width="492" height="658"/>
+	<SubTexture name="vicky pibby up instance 10014" x="3264" y="1752" width="492" height="658"/>
+</TextureAtlas>

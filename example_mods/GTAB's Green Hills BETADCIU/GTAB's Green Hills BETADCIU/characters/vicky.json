@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				90,
+				-61
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "vicky pibby left instance 1",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				21,
+				-86
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "vicky pibby down instance 1",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				75,
+				162
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "vicky pibby up instance 1",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-32,
+				86
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "vicky pibby right instance 1",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-2,
+				154
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "laugh",
+			"loop": false,
+			"name": "vicky laugh instance 1"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": true,
+			"name": "vicky pibby idle instance 1"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/vickyPibby_assest",
+	"position": [
+		50,
+		110
+	],
+	"healthicon": "vicky",
+	"flip_x": false,
+	"healthbar_colors": [
+		158,
+		59,
+		29
+	],
+	"camera_position": [
+		-80,
+		-230
+	],
+	"sing_duration": 6.1,
+	"scale": 1.5
+}

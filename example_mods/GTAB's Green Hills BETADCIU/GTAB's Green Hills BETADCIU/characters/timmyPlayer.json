@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-22,
+				2
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "TIMMY NOTE LEFT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-11,
+				9
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "TIMMY NOTE DOWN",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-26,
+				64
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "TIMMY NOTE UP",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "timmy idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-27,
+				-7
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "TIMMY NOTE RIGHT",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/timmy_assests",
+	"position": [
+		-25,
+		0
+	],
+	"healthicon": "timmy",
+	"flip_x": false,
+	"healthbar_colors": [
+		137,
+		49,
+		76
+	],
+	"camera_position": [
+		0,
+		-130
+	],
+	"sing_duration": 6.1,
+	"scale": 1.6
+}

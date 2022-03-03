@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				333,
+				77
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Jake Right note"
+		},
+		{
+			"offsets": [
+				85,
+				-209
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Jake down note"
+		},
+		{
+			"offsets": [
+				85,
+				19
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Jake up note"
+		},
+		{
+			"offsets": [
+				401,
+				125
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Jake Left note"
+		},
+		{
+			"loop": true,
+			"offsets": [
+				227,
+				-2
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Jake idle dance",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/jakesheet",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "jake",
+	"flip_x": false,
+	"healthbar_colors": [
+		40,
+		0,
+		0
+	],
+	"camera_position": [
+		-260,
+		80
+	],
+	"sing_duration": 6.1,
+	"scale": 0.8
+}

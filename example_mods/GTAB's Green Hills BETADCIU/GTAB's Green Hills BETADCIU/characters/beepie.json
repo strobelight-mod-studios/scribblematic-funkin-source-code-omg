@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "beepie idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				9,
+				19
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "beepie up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-42,
+				0
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "beepie right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				51,
+				-9
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "beepie left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-34,
+				-95
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "beepie down",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/beepienormal_assets",
+	"position": [
+		10,
+		220
+	],
+	"healthicon": "beepie",
+	"flip_x": false,
+	"healthbar_colors": [
+		49,
+		176,
+		209
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}
