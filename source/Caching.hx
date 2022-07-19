@@ -17,6 +17,10 @@ import flixel.math.FlxRect;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.text.FlxText;
+import flixel.FlxCamera;
+import flixel.FlxObject;
+import flixel.FlxSubState;
+import flixel.system.FlxSound;
 
 using StringTools;
 
@@ -25,8 +29,9 @@ class Caching extends MusicBeatState
     var toBeDone = 0;
     var done = 0;
 
-    var text:FlxText;
-    var kadeLogo:FlxSprite;
+    //var text:FlxText;
+    //var kadeLogo:FlxSprite;
+    var bg:FlxSprite;
 
 	override function create()
 	{
@@ -34,6 +39,7 @@ class Caching extends MusicBeatState
 
         FlxG.worldBounds.set(0,0);
 
+        /*
         text = new FlxText(FlxG.width / 2, FlxG.height / 2 + 300,0,"Loading...");
         text.size = 34;
         text.alignment = FlxTextAlign.CENTER;
@@ -47,9 +53,23 @@ class Caching extends MusicBeatState
         kadeLogo.setGraphicSize(Std.int(kadeLogo.width * 0.6));
 
         kadeLogo.alpha = 0;
+        */
 
-        add(kadeLogo);
-        add(text);
+        bg = new FlxSprite(0, 0).loadGraphic(Paths.image('loadScreens/screen-' + FlxG.random.int(1, 8)));
+        bg.setGraphicSize(Std.int(bg.width * 1));
+        bg.updateHitbox();
+
+        bg.alpha = 0;
+
+        //add(kadeLogo);
+        //add(text);
+        add(bg);
+
+        /*
+        var randomLoadingScreen:FlxSprite = new FlxSprite().loadGraphic(Paths.image('loadingScreens/loadingscreen-' + FlxG.random.int(1, 8)));
+        randomLoadingScreen.screenCenter();
+        add(randomLoadingScreen);
+        */
 
         trace('starting caching..');
         
@@ -69,9 +89,7 @@ class Caching extends MusicBeatState
         if (toBeDone != 0 && done != toBeDone)
         {
             var alpha = HelperFunctions.truncateFloat(done / toBeDone * 100,2) / 100;
-            kadeLogo.alpha = alpha;
-            text.alpha = alpha;
-            text.text = "Loading... (" + done + "/" + toBeDone + ")";
+            bg.alpha = alpha;
         }
 
         super.update(elapsed);

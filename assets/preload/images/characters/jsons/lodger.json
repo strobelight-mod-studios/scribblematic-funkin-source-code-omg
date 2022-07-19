@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"fps": 19,
+			"anim": "idle",
+			"indices": [],
+			"name": "LodgerIDLE"
+		},
+		{
+			"offsets": [
+				29,
+				-43
+			],
+			"loop": false,
+			"fps": 19,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "LodgerLEFT"
+		},
+		{
+			"offsets": [
+				-30,
+				-140
+			],
+			"loop": false,
+			"fps": 19,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "LodgerRIGHT"
+		},
+		{
+			"offsets": [
+				10,
+				-70
+			],
+			"loop": false,
+			"fps": 19,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "LodgerDOWN"
+		},
+		{
+			"offsets": [
+				-46,
+				61
+			],
+			"loop": false,
+			"fps": 19,
+			"anim": "singUP",
+			"indices": [],
+			"name": "LodgerUP"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Lodger",
+	"position": [
+		60,
+		200
+	],
+	"healthicon": "lodger",
+	"flip_x": false,
+	"healthbar_colors": [
+		127,
+		0,
+		0
+	],
+	"camera_position": [
+		-190,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

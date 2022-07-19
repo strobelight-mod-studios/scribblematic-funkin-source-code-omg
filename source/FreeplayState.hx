@@ -10,6 +10,10 @@ import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
+import flixel.effects.FlxFlicker;
+import flixel.tweens.FlxTween;
+import flixel.util.FlxTimer;
+import vlc.MP4Handler;
 
 
 #if windows
@@ -24,29 +28,54 @@ class FreeplayState extends MusicBeatState
 
 	var selector:FlxText;
 	var curSelected:Int = 0;
-	var curDifficulty:Int = 1;
+	var curDifficulty:Int = 2;
 
 	var scoreText:FlxText;
+	var infoText:FlxText;
 	var comboText:FlxText;
 	var diffText:FlxText;
 	var lerpScore:Int = 0;
 	var intendedScore:Int = 0;
 	var combo:String = '';
+	var funnyNumber:Int = 4;
 
 	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var curPlaying:Bool = false;
 
+	var bgPixel:FlxSprite;
+	var infoBG:FlxSprite;
+
+	var blackScreen:FlxSprite;
+	var enterText:Alphabet;
+	var otherText:FlxText;
+
+	var inUnlockMenu:Bool;
+	public static var canMove:Bool;
+
 	private var iconArray:Array<HealthIcon> = [];
+
+	var spookyVideo:MP4Handler;
 
 	override function create()
 	{
-		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
+		if (FlxG.sound.music.volume == 0 || !FlxG.sound.music.playing)
+		{
+			FlxG.sound.music.volume = 1;
+			FlxG.sound.playMusic(Paths.music('gameJoltLoggin'));
+		}
 
+		//var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
+		// lemme check if i can hardcode this stuff instead
+
+		FlxG.sound.playMusic(Paths.music('gameJoltLoggin'));
+
+		/*
 		for (i in 0...initSonglist.length)
 		{
 			var data:Array<String> = initSonglist[i].split(':');
 			songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
 		}
+		*/
 
 		/* 
 			if (FlxG.sound.music != null)
@@ -66,6 +95,14 @@ class FreeplayState extends MusicBeatState
 		#if debug
 		isDebug = true;
 		#end
+
+		addWeek(['Tutorial', 'Intense Training'], 1, ['gf', 'gf']);
+		addWeek(['Vault', 'Velocity'], 2, ['kaskudek', 'chill-grunt']);
+		addWeek(['Indie'], 3, ['sara-heric']);
+		if (FlxG.save.data.ogUnlocked == true) {
+			addSong('Discarded', 4, 'og-kaskudek');
+		}
+		addWeek(['Bopeebo-Spotify', 'Bopeebo-Spotify-Photonegative'], 5, ['dad', 'dad-evil']);
 
 		// LOAD MUSIC
 
@@ -238,6 +275,9 @@ class FreeplayState extends MusicBeatState
 				case 'Dad-Battle': songFormat = 'Dadbattle';
 				case 'Philly-Nice': songFormat = 'Philly';
 				case "Rabbit's-Luck": songFormat = "Rabbit's-Luck-Hard";
+				// Sorry Kade, but I don't trust you. I know I could use 1.6.2, but Cheesy wanted the old chart editor
+				case 'Intense Training': songFormat = 'Intense-Training'; 
+				case 'The Shopkeeper': songFormat = 'The-Shopkeeper';
 			}
 			
 			trace(songs[curSelected].songName);
@@ -259,10 +299,10 @@ class FreeplayState extends MusicBeatState
 	{
 		curDifficulty += change;
 
-		if (curDifficulty < 0)
+		if (curDifficulty < 2)
 			curDifficulty = 2;
 		if (curDifficulty > 2)
-			curDifficulty = 0;
+			curDifficulty = 2;
 
 		// adjusting the highscore song name to be compatible (changeDiff)
 		var songHighscore = StringTools.replace(songs[curSelected].songName, " ", "-");
@@ -270,6 +310,8 @@ class FreeplayState extends MusicBeatState
 			case 'Dad-Battle': songHighscore = 'Dadbattle';
 			case 'Philly-Nice': songHighscore = 'Philly';
 			case "Rabbit's-Luck": songHighscore = "Rabbit's-Luck-Hard";
+			case 'Intense Training': songHighscore = 'Intense-Training';
+			case 'The Shopkeeper': songHighscore = 'The-Shopkeeper';
 		}
 		
 		#if !switch
@@ -305,6 +347,8 @@ class FreeplayState extends MusicBeatState
 			case 'Dad-Battle': songHighscore = 'Dadbattle';
 			case 'Philly-Nice': songHighscore = 'Philly';
 			case "Rabbit's-Luck": songHighscore = "Rabbit's-Luck-Hard";
+			case 'Intense Training': songHighscore = 'Intense-Training';
+			case 'The Shopkeeper': songHighscore = 'The-Shopkeeper';
 		}
 
 		#if !switch
@@ -314,7 +358,7 @@ class FreeplayState extends MusicBeatState
 		#end
 
 		#if PRELOAD_ALL
-		FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
+
 		#end
 
 		var bullShit:Int = 0;

@@ -1,8 +1,14 @@
 # I'm too lazy to update this but
 ## Here's some info before you want to compile the game
+## Required Haxe Libraries and other stuff
+- Check out your Haxe version you have installed. If it's 4.1.5, you're good to go
+- Read ninjamuffin99's FNF compiling guide
+- Install all those other libraries via batchfile I made.
+- - You can [click here](https://cdn.discordapp.com/attachments/848938574254440468/970695340938391602/0_all_haxe_commands_ya_need.bat) to download instantly
+- - Or check the raw file by [clicking here](https://raw.githubusercontent.com/teotm/some-trio-source-code/main/art/batchFiles/0_all_haxe_commands_ya_need.bat) and convert it to `.bat`.
 ## Ignored file list
-- The whole `export` folder. I think that's obvoius why. If it isn't obvious, go [click here](https://github.com/teotm/friday-night-funkin-source-code-guide/blob/main/README.md).
-- `source/GJKeys.hx` file. If I shared the file, you would gain access to the game's private API key. Here's the code without any harmful informations below if your game didn't want to compile:
+- The whole `export` folder obvoiusly
+- `source/GJKeys.hx` file. If I shared the file, you would gain access to the game's private API key. Here's the code without any harmful informations below in case if your game didn't want to compile:
 ```haxe
 package;
 class GJKeys
@@ -13,7 +19,6 @@ class GJKeys
     // btw rename the file name into GJKeys(.hx)
 }
 ```
-- `.zip` files. I added them just in case.
 
 ![Kade Engine logo](assets/preload/images/KadeEngineLogo.png)
 

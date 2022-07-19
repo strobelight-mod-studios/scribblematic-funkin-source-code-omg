@@ -1,5 +1,7 @@
 import h2d.Tweenie.TType;
 
+// wtf, are the comments in fucking spanish? - teotm
+
 //praise delahee, i'll figure out what this shit means later!
 
 enum TVVar{
@@ -21,7 +23,7 @@ class TweenV {
 	var to			: Float;
 	var type		: TType;
 	var plays		: Int; // -1 = infini, 1 et plus = nombre d'exécutions (1 par défaut)
-	var varType		: TVVar; 
+	var varType		: TVVar; // ok nvm they are in french - teotm
 	var onUpdate	: Null<TweenV->Void>;
 	var onEnd		: Null<TweenV->Void>;
 	var isDebug		= false;

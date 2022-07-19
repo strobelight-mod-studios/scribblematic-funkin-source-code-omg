@@ -44,9 +44,10 @@ class OptionsMenu extends MusicBeatState
 			new CamZoomOption("Toggle the camera zoom in-game."),
 			#if desktop
 			new RainbowFPSOption("Make the FPS Counter Rainbow"),
-			new AccuracyOption("Display accuracy information."),
+			new AccuracyOption("Choose if your accuracy UI display should be Kade or Psych."),
 			new NPSDisplayOption("Shows your current Notes Per Second."),
-			new SongPositionOption("Show the songs current position (as a bar)"),
+			//new ShowTimeBarOption("Select if you want to see a time bar or not."), FlxG.save.data.songPosition
+			new SongPositionOption("Select if you want to see a time bar or not."),
 			new CpuStrums("CPU's strumline lights up when a note hits it."),
 			#end
 		]),
@@ -58,12 +59,8 @@ class OptionsMenu extends MusicBeatState
 			#end
 			new FlashingLightsOption("Toggle flashing lights that can cause epileptic seizures and strain."),
 			new WatermarkOption("Enable and disable all watermarks from the engine."),
-			new ScoreScreen("Show the score screen after the end of a song"),
-			new ShowInput("Display every single input in the score screen."),
-			new Optimization("No backgrounds, no characters, centered notes, no player 2."),
 			new BotPlay("Showcase your charts and mods with autoplay."),
-			new LanguageOption("Change the language of the mod."),
-			new BETADCIUsomeTrioCharacterChanging("Characters change in BETADCIU songs."),
+			new LanguageOption("Change the language of the mod.")
 		])
 		
 	];

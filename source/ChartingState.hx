@@ -73,10 +73,11 @@ class ChartingState extends MusicBeatState
 	var curRenderedNotes:FlxTypedGroup<Note>;
 	var curRenderedSustains:FlxTypedGroup<FlxSprite>;
 
-	var hiddenSongs:Array<String> =['corn-maze', 'corn maze' ,'48-12-25', '48 12 25', 'algebra', 'algebra-strobelight', 'algebra strobelight']; // the song Kaskudek told me to chart Corn Maze + Maybe doing Algebra cover
-	var hiddenSongsCheesy:Array<String> =['killer-scream', 'killer scream']; // Killer Scream would be the in the same easter egg as Corn Maze, but since Cheesy wanted somethin "original", here it goes.
-	var hiddenSongs2:Array<String> =[]; // Goblock's BETADCIUs
-	var hiddenCanonSongs:Array<String> =['shining']; // Adding these songs to story mode later
+	var hiddenSongs:Array<String> = ['corn-maze', 'corn maze']; // the song Kaskudek told me to chart Corn Maze + Maybe doing Algebra cover
+	var hiddenSongsCheesy:Array<String> = ['the-shopkeeper', 'the shopkeeper'];
+	var hiddenSongs2:Array<String> = []; // sussybakaguyidkwhy's BETADCIUs
+	var hiddenCanonSongs:Array<String> = ['delayed']; // Adding these songs to story mode later
+	// FUCK YOU! No, I'm not deleting empty variables.
 
 	var gridBG:FlxSprite;
 
@@ -1468,18 +1469,16 @@ class ChartingState extends MusicBeatState
 
 	function loadJson(song:String):Void
 	{
-		PlayState.SONG = Song.loadFromJson(song.toLowerCase(), song.toLowerCase());
-		if (Main.hiddenSongs.contains(song.toLowerCase()) && !Main.isHidden)
+		var format = StringTools.replace(PlayState.SONG.song.toLowerCase(), " ", "-");
+
+		switch (format) {
+			case 'Dad-Battle': format = 'Dadbattle';
+			case 'Philly-Nice': format = 'Philly';
+		}
+		PlayState.SONG = Song.loadFromJson(format, format);
+		if (Main.hiddenSongs.contains(song.toLowerCase()) || Main.hiddenSongsCheesy.contains(song.toLowerCase()) && !Main.isHidden)
 		{
 			LoadingState.loadAndSwitchState(new IKnowWhatYouDidState());
-		}
-		else if (Main.hiddenSongsCheesy.contains(song.toLowerCase()) && !Main.isHidden)
-		{
-			LoadingState.loadAndSwitchState(new CheesyState());
-		}
-		else if (Main.hiddenSongs2.contains(song.toLowerCase()) && !Main.isHidden)
-		{
-			LoadingState.loadAndSwitchState(new GreenGuyState());
 		}
 		else if (Main.hiddenCanonSongs.contains(song.toLowerCase()) && !Main.isHidden)
 		{

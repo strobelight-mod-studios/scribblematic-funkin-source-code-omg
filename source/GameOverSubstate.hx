@@ -1,9 +1,15 @@
 package;
 
+import flixel.FlxCamera;
 import flixel.FlxG;
 import flixel.FlxObject;
+import flixel.FlxSprite;
 import flixel.FlxSubState;
 import flixel.math.FlxPoint;
+import flixel.system.FlxSound;
+import flixel.text.FlxText;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 
@@ -11,6 +17,7 @@ class GameOverSubstate extends MusicBeatSubstate
 {
 	var bf:Boyfriend;
 	var camFollow:FlxObject;
+	var voiceline:FlxSound; // fuck this, i'm running out of time. scrapping it till 2.0
 
 	var stageSuffix:String = "";
 
@@ -29,24 +36,34 @@ class GameOverSubstate extends MusicBeatSubstate
 				daBf = 'BOCHEN';
 			case 'bf-bw':
 				daBf = 'bf-bw';
-			case 'nenechi':
-				daBf = 'nenechi';
+			case 'nene':
+				daBf = 'nene';
 			case 'aloe':
 				daBf = 'aloe';
 			case 'sonic':
 				daBf = 'sonic';
 			case 'lexi':
 				daBf = 'lexi';
-			case 'girlfriend-playable':
-				daBf = 'girlfriend-playable';
-			case 'girlfriend-playable-bw':
-				daBf = 'girlfriend-playable-bw';
+			case 'girlfriend':
+				daBf = 'girlfriend';
+			case 'girlfriend-bw':
+				daBf = 'girlfriend-bw';
 			case 'bf-demoncesar':
 				daBf = 'bf-demoncesar';
 			case 'lexi-new':
 				daBf = 'lexi-new';
 			case 'bf-pibby':
 				daBf = 'bf-pibby';
+			case 'bf-cesar':
+				daBf = 'bf-cesar';
+			case 'spongebob-tiky':
+				daBf = 'spongebob-tiky';
+			case 'red3':
+				daBf = 'red3';
+			case 'kaskudekActualPlayer':
+				daBf = 'kaskudekActualPlayer';
+			case 'bf-evil':
+				daBf = 'bf-evil';
 			case 'ena' | 'ǝna' | 'jena' | 'ina' | 'enna' | 'ayna' | 'chaina' /*easter egg purposes only*/:
 				daBf = 'ena';
 			default:
@@ -56,6 +73,8 @@ class GameOverSubstate extends MusicBeatSubstate
 		super();
 
 		Conductor.songPosition = 0;
+
+		voiceline = new FlxSound();
 
 		bf = new Boyfriend(x, y, daBf);
 		add(bf);
@@ -101,13 +120,45 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
 		{
+			var pre:String = "";
+			var suf:String = "";
+
+			if (FlxG.save.data.langPlEn)
+			{
+				suf = '-PL';
+			}
+
 			FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
+			/*
+			switch (PlayState.SONG.song.toLowerCase())
+			{
+				case 'vault':
+					playVoiceLine(StringTools.replace(Paths.sound(pre+'KaskudekDeathQuotes'+suf, 'vsSomeTrioweek'), '.ogg', ''), 4); // death quotes let's go
+				case 'shining':
+					playVoiceLine(StringTools.replace(Paths.sound('EmeraldDeathQuotes', 'vsSomeTrioweek'), '.ogg', ''), 3);
+			}
+			*/
 		}
 
 		if (FlxG.sound.music.playing)
 		{
 			Conductor.songPosition = FlxG.sound.music.time;
 		}
+	}
+
+	function playVoiceLine(path:String, num:Int = 0) // scrapped, but still coded in
+	{
+		FlxTween.tween(FlxG.sound.music, {volume: 0.4}, 0.3);
+
+		var rng = Std.string(FlxG.random.int(1, num));
+
+		voiceline.loadEmbedded(path + '/' + rng + '.ogg');
+		voiceline.play();
+		voiceline.onComplete = function()
+		{
+			FlxTween.tween(FlxG.sound.music, {volume: 1}, 0.3);
+		}
+		FlxG.sound.list.add(voiceline);
 	}
 
 	override function beatHit()
@@ -124,6 +175,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		if (!isEnding)
 		{
 			isEnding = true;
+			voiceline.volume = 0;
 			bf.playAnim('deathConfirm', true);
 			FlxG.sound.music.stop();
 			FlxG.sound.play(Paths.music('gameOverEnd' + stageSuffix));

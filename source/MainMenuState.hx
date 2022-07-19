@@ -15,7 +15,9 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import io.newgrounds.NG;
 import lime.app.Application;
+#if GAMEJOLT
 import GameJolt.GameJoltAPI;
+#end
 
 #if windows
 import Discord.DiscordClient;
@@ -41,9 +43,9 @@ class MainMenuState extends MusicBeatState
 
 	public static var nightly:String = "";
 
-	public static var kadeEngineVer:String = "1.5.4";
+	public static var kadeEngineVer:String = "Kade Engine";
 	public static var gameVer:String = "0.2.7.1";
-	public static var someTrio:String = "3rd demo - Glitched Gem Update";
+	public static var someTrio:String = "1.5 - Chill Grunt Update";
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
@@ -56,10 +58,9 @@ class MainMenuState extends MusicBeatState
 		DiscordClient.changePresence("In the Menus", null);
 		#end
 
-		if (!FlxG.sound.music.playing)
-		{
-			FlxG.sound.playMusic(Paths.music('freakyMenu'));
-		}
+		
+		FlxG.sound.playMusic(Paths.music('freakyMenu'));
+		
 
 		persistentUpdate = persistentDraw = true;
 
@@ -118,7 +119,7 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollow, null, 0.60 * (60 / FlxG.save.data.fpsCap));
 
-		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, gameVer + " FNF - " + kadeEngineVer + " Kade Engine - Some Trio " +  someTrio, 12);
+		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, gameVer + " FNF - " + kadeEngineVer + " - Scribblematic Funkin' " +  someTrio, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
@@ -184,7 +185,7 @@ class MainMenuState extends MusicBeatState
 			{
 				if (optionShit[curSelected] == 'donate')
 				{
-					fancyOpenURL("https://ninja-muffin24.itch.io/funkin");
+					fancyOpenURL("https://discord.com/invite/GeCArAMJ6y");
 				}
 				else
 				{

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="BF_Scribblematic.png">
+<SubTexture name="Bf Idle0000" x="0" y="0" width="358" height="604" frameX="-154" frameY="-77" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Idle0001" x="0" y="0" width="358" height="604" frameX="-154" frameY="-77" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Idle0002" x="358" y="0" width="345" height="613" frameX="-162" frameY="-68" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Idle0003" x="358" y="0" width="345" height="613" frameX="-162" frameY="-68" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Idle0004" x="703" y="0" width="328" height="617" frameX="-174" frameY="-64" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Idle0005" x="703" y="0" width="328" height="617" frameX="-174" frameY="-64" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Right0000" x="1031" y="0" width="317" height="614" frameX="-211" frameY="-67" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Right0001" x="1031" y="0" width="317" height="614" frameX="-211" frameY="-67" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Right0002" x="0" y="617" width="317" height="614" frameX="-205" frameY="-67" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Right0003" x="0" y="617" width="317" height="614" frameX="-205" frameY="-67" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Left0000" x="317" y="617" width="343" height="613" frameX="-157" frameY="-68" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Left0001" x="317" y="617" width="343" height="613" frameX="-157" frameY="-68" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Left0002" x="660" y="617" width="338" height="613" frameX="-161" frameY="-68" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Left0003" x="660" y="617" width="338" height="613" frameX="-161" frameY="-68" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Up0000" x="998" y="617" width="302" height="618" frameX="-211" frameY="-64" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Up0001" x="998" y="617" width="302" height="618" frameX="-211" frameY="-64" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Up0002" x="0" y="1235" width="302" height="615" frameX="-211" frameY="-67" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Up0003" x="0" y="1235" width="302" height="615" frameX="-211" frameY="-67" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Down0000" x="302" y="1235" width="342" height="596" frameX="-169" frameY="-85" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Down0001" x="302" y="1235" width="342" height="596" frameX="-169" frameY="-85" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Down0002" x="644" y="1235" width="334" height="601" frameX="-173" frameY="-81" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Down0003" x="644" y="1235" width="334" height="601" frameX="-173" frameY="-81" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Miss Universal0000" x="978" y="1235" width="325" height="603" frameX="-178" frameY="-78" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Miss Universal0001" x="978" y="1235" width="325" height="603" frameX="-178" frameY="-78" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Miss Universal0002" x="0" y="1850" width="349" height="592" frameX="-154" frameY="-89" frameWidth="726" frameHeight="756" />
+<SubTexture name="Bf Miss Universal0003" x="0" y="1850" width="349" height="592" frameX="-154" frameY="-89" frameWidth="726" frameHeight="756" />
+</TextureAtlas>

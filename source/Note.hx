@@ -27,6 +27,7 @@ class Note extends FlxSprite
 	public var sustainLength:Float = 0;
 	public var isSustainNote:Bool = false;
 	public var dType:Int = 0;
+	public var noteType:Int = 0;
 
 	public var noteScore:Float = 1;
 

@@ -6,6 +6,7 @@ import smTools.SMFile;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.input.keyboard.FlxKey;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
 import flixel.addons.transition.FlxTransitionableState;
@@ -35,8 +36,10 @@ import Discord.DiscordClient;
 import sys.thread.Thread;
 #end
 
+#if GAMEJOLT
 import GameJolt;
 import GameJolt.GameJoltAPI;
+#end
 
 using StringTools;
 
@@ -50,14 +53,29 @@ class TitleState extends MusicBeatState
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
 
-	var curWacky:Array<String> = [];
+	public static var curWacky:Array<String> = [];
 
 	var wackyImage:FlxSprite;
 
+	#if desktop
+	var easterEggKeys:Array<String> = [ // lol, i'm not setting this to string. keepin' as array<string>
+		'GOBACKINTIME' // not to be confused with the var
+	];
+		#if REVERSE_ENGINEERING
+		var goBackInTime:Array<String> = [
+			'REVERSE'
+		];
+		#end
+	var allowedKeys:String = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	var easterEggKeysBuffer:String = '';
+	#end
+
 	override public function create():Void
 	{
+		#if GAMEJOLT
 		GameJoltAPI.connect();
 		GameJoltAPI.authDaUser(FlxG.save.data.gjUser, FlxG.save.data.gjToken);
+		#end
 
 		#if polymod // to avoid game crashing while stopped caching songs
 
@@ -107,6 +125,11 @@ class TitleState extends MusicBeatState
 		// this was testing things
 		
 		Highscore.load();
+
+		#if desktop
+		if (FlxG.save.data.ogKeyboard == null)
+			FlxG.save.data.ogKeyboard = ''; //Crash prevention moment
+		#end
 
 		if (FlxG.save.data.weekUnlocked != null)
 		{
@@ -178,7 +201,7 @@ class TitleState extends MusicBeatState
 		add(bg);
 
 		if(Main.watermarks) {
-			logoBl = new FlxSprite(-150, -100);
+			logoBl = new FlxSprite(-100, -75);
 			logoBl.frames = Paths.getSparrowAtlas('KadeEngineLogoBumpin');
 			logoBl.antialiasing = true;
 			logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
@@ -187,7 +210,7 @@ class TitleState extends MusicBeatState
 			// logoBl.screenCenter();
 			// logoBl.color = FlxColor.BLACK;
 		} else {
-			logoBl = new FlxSprite(-150, -100);
+			logoBl = new FlxSprite(-100, -75);
 			logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 			logoBl.antialiasing = true;
 			logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
@@ -197,10 +220,18 @@ class TitleState extends MusicBeatState
 			// logoBl.color = FlxColor.BLACK;
 		}
 
-		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
+		#if desktop
+		var easterEgg:String = FlxG.save.data.ogKeyboard;
+		if(easterEgg == null) 
+			easterEgg = '';
+		#end
+
+		// new FlxSprite(-100, -75);
+		gfDance = new FlxSprite(500, -150);
 		gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
-		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+		gfDance.setGraphicSize(Std.int(gfDance.width * 0.7));
+		gfDance.animation.addByIndices('danceLeft', 'gfDance', [12, 0, 1, 2, 3, 4, 5], "", 24, false);
+		gfDance.animation.addByIndices('danceRight', 'gfDance', [6, 7, 8, 9, 10, 11], "", 24, false);
 		gfDance.antialiasing = true;
 		add(gfDance);
 		add(logoBl);
@@ -273,6 +304,7 @@ class TitleState extends MusicBeatState
 	}
 
 	var transitioning:Bool = false;
+	private static var playJingle:Bool = false;
 
 	override function update(elapsed:Float)
 	{
@@ -280,10 +312,12 @@ class TitleState extends MusicBeatState
 			Conductor.songPosition = FlxG.sound.music.time;
 		// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
 
+		/*
 		if (FlxG.keys.justPressed.F)
 		{
 			FlxG.fullscreen = !FlxG.fullscreen;
 		}
+		*/
 
 		var pressedEnter:Bool = controls.ACCEPT;
 
@@ -293,6 +327,97 @@ class TitleState extends MusicBeatState
 			if (touch.justPressed)
 			{
 				pressedEnter = true;
+			}
+		}
+		#end
+
+		#if desktop // stolen code from psych moment
+		if (FlxG.keys.firstJustPressed() != FlxKey.NONE)
+		{
+			/*
+			var easterEggKeys:Array<String> = [
+				'SHOP' // Not to be confused with the variable
+			];
+			var allowedKeys:String = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			var easterEggKeysBuffer:String = '';
+
+			var goBackInTime:Array<String> = [
+				'REVERSE'
+			];
+			*/
+
+			var keyPressed:FlxKey = FlxG.keys.firstJustPressed();
+			var keyName:String = Std.string(keyPressed);
+			if(allowedKeys.contains(keyName)) {
+				easterEggKeysBuffer += keyName;
+				if(easterEggKeysBuffer.length >= 32) easterEggKeysBuffer = easterEggKeysBuffer.substring(1);
+				trace('Okay, the player pressed one of the allowed keys! Buffer: ' + easterEggKeysBuffer + ". Let's see if they guess the password.");
+
+				for (wordRaw in easterEggKeys)
+				{
+					var word:String = wordRaw.toUpperCase(); //just for being sure you're doing it right
+					if (easterEggKeysBuffer.contains(word))
+					{
+						trace('YOOO! They guessed the word ' + word + ' !'); // minor spelling mistake
+						if (FlxG.save.data.ogKeyboard == word)
+							FlxG.save.data.ogKeyboard = '';
+						else
+							FlxG.save.data.ogKeyboard = word;
+						FlxG.save.flush();
+
+						FlxG.sound.play(Paths.sound('ToggleJingle', 'shared'));
+
+						if (!FlxG.save.data.ogUnlocked)
+						{
+							FlxG.save.data.ogUnlocked = true;
+							trace("ok. og kaskudek is unlocked now.");
+						}
+						else
+						{
+							FlxG.save.data.ogUnlocked = true; // no. reverse. engineering. or smthn
+							trace("reverse engineering?");
+						}
+
+						closedState = true;
+						playJingle = true;
+						easterEggKeysBuffer = '';
+						break;
+					}
+				}
+
+				#if REVERSE_ENGINEERING
+				for (wordRaw in goBackInTime)
+				{
+					var word:String = wordRaw.toUpperCase(); //just for being sure you're doing it right
+					if (easterEggKeysBuffer.contains(word))
+					{
+						//trace('YOOO! They guessed the word ' + word + ' !'); // minor spelling mistake
+						if (FlxG.save.data.ogKeyboard == word)
+							FlxG.save.data.ogKeyboard = '';
+						else
+							FlxG.save.data.ogKeyboard = word;
+						FlxG.save.flush();
+
+						FlxG.sound.play(Paths.sound('QuandaleJingle', 'shared'));
+
+						if (FlxG.save.data.ogUnlocked)
+						{
+							FlxG.save.data.ogUnlocked = false;
+							trace("lockin' shopkeeper");
+						}
+						else
+						{
+							FlxG.save.data.ogUnlocked = false; // no. reverse. engineering. or smthn
+							trace("shopekeeper is locked already");
+						}
+
+						closedState = true;
+						playJingle = true;
+						easterEggKeysBuffer = '';
+						break;
+					}
+				}
+				#end
 			}
 		}
 		#end
@@ -327,11 +452,16 @@ class TitleState extends MusicBeatState
 				
 				http.onData = function (data:String)
 				{
+					closedState = true;
 					returnedData[0] = data.substring(0, data.indexOf(';'));
 					returnedData[1] = data.substring(data.indexOf('-'), data.length);
 				  	if (!MainMenuState.kadeEngineVer.contains(returnedData[0].trim()) && !OutdatedSubState.leftState && MainMenuState.nightly == "")
 					{
+						#if GAMEJOLT
 						FlxG.switchState(new GameJoltLogin());
+						#else
+						FlxG.switchState(new DemoState());
+						#end
 					}
 					else
 					{
@@ -340,8 +470,9 @@ class TitleState extends MusicBeatState
 				}
 				
 				http.onError = function (error) {
+				  closedState = true;
 				  trace('error: $error');
-				  FlxG.switchState(new MainMenuState()); // fail but we go anyway
+				  FlxG.switchState(new DemoState()); // fail but we go anyway
 				}
 				
 				http.request();
@@ -387,6 +518,8 @@ class TitleState extends MusicBeatState
 		}
 	}
 
+	public static var closedState:Bool = false;
+
 	override function beatHit()
 	{
 		super.beatHit();
@@ -401,63 +534,65 @@ class TitleState extends MusicBeatState
 
 		FlxG.log.add(curBeat);
 
-		switch (curBeat)
-		{
-			case 1:
-				createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
-			// credTextShit.visible = true;
-			case 3:
-				addMoreText('present');
-			// credTextShit.text += '\npresent...';
-			// credTextShit.addText();
-			case 4:
-				deleteCoolText();
-			// credTextShit.visible = false;
-			// credTextShit.text = 'In association \nwith';
-			// credTextShit.screenCenter();
-			case 5:
-				if (Main.watermarks)
-					createCoolText(['Kade Engine', 'by']);
-				else
-					createCoolText(['In Partnership', 'with']);
-			case 7:
-				if (Main.watermarks)
-					addMoreText('KadeDeveloper');
-				else
-				{
-					addMoreText('Newgrounds');
-					ngSpr.visible = true;
-				}
-			// credTextShit.text += '\nNewgrounds';
-			case 8:
-				deleteCoolText();
-				ngSpr.visible = false;
-			// credTextShit.visible = false;
+		if(!closedState) {
+			switch (curBeat)
+			{
+				case 1:
+					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
+				// credTextShit.visible = true;
+				case 3:
+					addMoreText('present');
+				// credTextShit.text += '\npresent...';
+				// credTextShit.addText();
+				case 4:
+					deleteCoolText();
+				// credTextShit.visible = false;
+				// credTextShit.text = 'In association \nwith';
+				// credTextShit.screenCenter();
+				case 5:
+					if (Main.watermarks)
+						createCoolText(['Kade Engine', 'by']);
+					else
+						createCoolText(['In Partnership', 'with']);
+				case 7:
+					if (Main.watermarks)
+						addMoreText('KadeDeveloper');
+					else
+					{
+						addMoreText('Newgrounds');
+						ngSpr.visible = true;
+					}
+				// credTextShit.text += '\nNewgrounds';
+				case 8:
+					deleteCoolText();
+					ngSpr.visible = false;
+				// credTextShit.visible = false;
 
-			// credTextShit.text = 'Shoutouts Tom Fulp';
-			// credTextShit.screenCenter();
-			case 9:
-				createCoolText([curWacky[0]]);
-			// credTextShit.visible = true;
-			case 11:
-				addMoreText(curWacky[1]);
-			// credTextShit.text += '\nlmao';
-			case 12:
-				deleteCoolText();
-			// credTextShit.visible = false;
-			// credTextShit.text = "Friday";
-			// credTextShit.screenCenter();
-			case 13:
-				addMoreText('Friday');
-			// credTextShit.visible = true;
-			case 14:
-				addMoreText('Night');
-			// credTextShit.text += '\nNight';
-			case 15:
-				addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
-
-			case 16:
-				skipIntro();
+				// credTextShit.text = 'Shoutouts Tom Fulp';
+				// credTextShit.screenCenter();
+				case 9:
+					createCoolText([curWacky[0]]);
+				// credTextShit.visible = true;
+				// credTextShit.text += '\nlmao';
+				case 11:
+					addMoreText(curWacky[1]);
+				// credTextShit.text += '\nlmao';
+				case 12:
+					deleteCoolText();
+				// credTextShit.visible = false;
+				// credTextShit.text = "Friday";
+				// credTextShit.screenCenter();
+				case 13:
+					addMoreText('Friday');
+				// credTextShit.visible = true;
+				case 14:
+					addMoreText('Night');
+				// credTextShit.text += '\nNight';
+				case 15:
+					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+				case 16:
+					skipIntro();
+			}
 		}
 	}
 
@@ -467,6 +602,17 @@ class TitleState extends MusicBeatState
 	{
 		if (!skippedIntro)
 		{
+			#if desktop
+				if (playJingle) //Ignore deez
+				{
+					var easteregg:String = FlxG.save.data.ogKeyboard;
+					if (easteregg == null) easteregg = '';
+					easteregg = easteregg.toUpperCase();
+
+					playJingle = false;
+				}
+			#end
+
 			remove(ngSpr);
 
 			FlxG.camera.flash(FlxColor.WHITE, 4);

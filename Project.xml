@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Friday Night Parkourin': vs. Some Trio" file="Some Trio" packageName="com.kadedev.kadeengine" package="com.kadedev.kadeengine" main="Main" version="0.2.7.1" company="kadedev" />
+	<app title="Sribblematic Funkin' - Demo 1.5.0 (Chill Grunt Update)" file="Scribblematic Funkin'" packageName="com.strobelight.scribblematic" package="com.strobelight.scribblematic" main="Main" version="0.2.7.1" company="strobelight" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
@@ -50,34 +50,32 @@
 	<define name="NO_PRELOAD_ALL" unless="PRELOAD_ALL"/>
 	
 	<section if="PRELOAD_ALL">
-		<library name="songs"          preload="true" />
-		<library name="shared"         preload="true" />
-		<library name="vsSomeTrioweek" preload="true" />
+		<library name="songs"           preload="true" />
+		<library name="shared"          preload="true" />
+		<library name="vsSomeTrioweek"  preload="true" />
+		<library name="vsOGKassy" preload="true" />
 	</section>
 	
 	<section if="NO_PRELOAD_ALL">
-		<library name="songs"          preload="false" />
-		<library name="shared"         preload="false" />
-		<library name="vsSomeTrioweek" preload="false" />
+		<library name="songs"           preload="false" />
+		<library name="shared"          preload="false" />
+		<library name="vsSomeTrioweek"  preload="false" />
+		<library name="vsOGKassy" preload="false" />
 	</section>
 	
-	<assets path="assets/songs"          library="songs"          exclude="*.ogg" if="web"/>
-	<assets path="assets/songs"          library="songs"          exclude="*.mp3" unless="web"/>
-	<assets path="assets/shared"         library="shared"         exclude="*.ogg" if="web"/>
-	<assets path="assets/shared"         library="shared"         exclude="*.mp3" unless="web"/>
-	<assets path="assets/vsSomeTrioweek" library="vsSomeTrioweek" exclude="*.ogg" if="web"/>
-	<assets path="assets/vsSomeTrioweek" library="vsSomeTrioweek" exclude="*.mp3" unless="web"/>
-
-	<!--mp4 video extension libraries-->
-	<assets path="assets/videos"         exclude="*.mp3"          if="web"/>
-	<assets path="assets/videos"         exclude="*.ogg"          unless="web"/>
-
-	<assets path="plugins/"              rename=''                if="windows"/>
-	<assets path="dlls/"                 rename=''                if="windows"/>
+	<assets path="assets/songs"           library="songs"           exclude="*.ogg" if="web"/>
+	<assets path="assets/songs"           library="songs"           exclude="*.mp3" unless="web"/>
+	<assets path="assets/shared"          library="shared"          exclude="*.ogg" if="web"/>
+	<assets path="assets/shared"          library="shared"          exclude="*.mp3" unless="web"/>
+	<assets path="assets/vsSomeTrioweek"  library="vsSomeTrioweek"  exclude="*.ogg" if="web"/>
+	<assets path="assets/vsSomeTrioweek"  library="vsSomeTrioweek"  exclude="*.mp3" unless="web"/>
+	<assets path="assets/vsOGKassy" library="vsOGKassy" exclude="*.ogg" if="web"/>
+	<assets path="assets/vsOGKassy" library="vsOGKassy" exclude="*.mp3" unless="web"/>
 	
-	<assets path='example_mods'                      rename='mods' embed='false'/>
-	<assets path='art/readme.txt'                    rename='do NOT readme.txt' />
-	<assets path='LICENSE'                           rename='LICENSE.txt' />
+	<!--assets path='example_mods'                   rename='mods' embed='false'/-->
+	<assets    path='art/readme.txt'                 rename='do NOT readme.txt' />
+	<assets    path='LICENSE'                        rename='LICENSE.txt' />
+	<assets    path='art/dataminers.txt'             rename='Info for dataminers.txt' />
 	<!-- <template path='mods' /> -->
 	
 	<!-- <assets path="CHANGELOG.md" rename='changelog.txt'/> -->
@@ -92,6 +90,16 @@
 
 	<haxelib name="flixel" />
 	<haxedev set='webgl' />
+	<haxelib name="flixel-tools" />
+
+	<!--Other shit-->
+	<haxelib name="tjson" />
+	<haxelib name="hxjsonast" />
+	<haxelib name="hscript-ex" /> <!-- https://github.com/ianharrigan/hscript-ex -->
+	<haxelib name="flixel-templates" />
+	<haxelib name="openfl" />
+	<haxelib name="hxCodec"/> <!-- haxelib install hxCodec 2.5.1 -->
+	<!-- <haxelib name="crashdumper"/> --> <!-- https://github.com/larsiusprime/crashdumper -->
 
 	<!--In case you want to use the addons package-->
 	<haxelib name="flixel-addons" />
@@ -104,22 +112,30 @@
 	<haxelib name="flixel-ui" />
 	<haxelib name="newgrounds"/>
 	<haxelib name="faxe" if='switch'/>
-	<haxelib name="polymod"/>
-	<haxelib name="discord_rpc" if="windows"/>
+	<!-- Polymod from Larsiusprime does not work. https://github.com/larsiusprime/polymod.git -->
+	<haxelib name="polymod"/> <!-- Remember to use this polymod: haxelib git polymod https://github.com/larsiusprime/polymod.git -->
+	<haxelib name="discord_rpc" if="windows"/> <!-- haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc -->
 	<haxelib name="linc_luajit"/>
 
 	<!--GameJolt Integration, maybe I'll add trophies-->
-	<haxelib name="tentools" />
-	<haxelib name="systools" />
-	<ndll name="systools" haxelib="systools" />
+	<section if="GAMEJOLT">
+		<haxelib name="tentools" />
+		<haxelib name="systools" />
+		<ndll name="systools" haxelib="systools" />
+	</section>
 
-	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
+	<haxelib name="hxcpp-debug-server" if="desktop"/>
 
 	<!-- <haxelib name="markdown" /> -->
 	<!-- <haxelib name="HtmlParser" /> -->
 
 	<!--In case you want to use nape with flixel-->
 	<!--<haxelib name="nape-haxe4" />-->
+
+	<!-- Custom Defines for testing - teotm -->
+	<!-- <define name="DEBUG_STUFF_IN_RELEASE" if="release" /> -->
+	<!-- <define name="REVERSE_ENGINEERING" if="desktop" /> -->
+	<!-- <define name="GAMEJOLT" if="desktop" /> -->
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
@@ -148,12 +164,19 @@
 	<haxedef name="FLX_NO_FOCUS_LOST_SCREEN" />
 
 	<!--Disable the Flixel core debugger. Automatically gets set whenever you compile in release mode!-->
-	<haxedef name="FLX_NO_DEBUG" unless="debug" />
+	<haxedef name="FLX_NO_DEBUG" />
+	<!-- Cause I want no debug cmd when I'll give the test builds to Strobelight. Read about it here: https://haxeflixel.com/documentation/haxeflixel-conditionals/ -->
 
 	<haxedef name="HXCPP_GC_BIG_BLOCKS"/>
+	<!-- Allows working memory greater than 1 Gig. https://github.com/HaxeFoundation/hxcpp/blob/master/docs/build_xml/Defines.md#defines -->
 
 	<!--Enable this for Nape release builds for a serious peformance improvement-->
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
+
+	<!-- Skill issue machine -->
+	<haxedef name="HXCPP_CHECK_POINTER"/>
+	<haxedef name="HXCPP_STACK_LINE" />
+	<!-- <haxedef name="HXCPP_STACK_TRACE"/> --> <!--if you want stack traces-->
 
 	<!-- _________________________________ Custom _______________________________ -->
 

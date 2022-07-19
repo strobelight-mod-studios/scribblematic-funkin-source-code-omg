@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="GF_Scribblematic.png">
+	<SubTexture name="GF_Scribblematic danceLeft0000" x="0" y="0" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceLeft0001" x="553" y="0" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceLeft0002" x="1106" y="0" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceLeft0003" x="1659" y="0" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceLeft0004" x="0" y="767" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceLeft0005" x="553" y="767" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceLeft0006" x="1106" y="767" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceLeft0007" x="1659" y="767" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceRight0000" x="0" y="1534" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceRight0001" x="553" y="1534" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceRight0002" x="1106" y="1534" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceRight0003" x="1659" y="1534" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceRight0004" x="0" y="2301" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceRight0005" x="553" y="2301" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceRight0006" x="1106" y="2301" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic danceRight0007" x="1659" y="2301" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic sad0000" x="0" y="3068" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic sad0001" x="553" y="3068" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic sad0002" x="1106" y="3068" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+	<SubTexture name="GF_Scribblematic sad0003" x="1659" y="3068" width="553" height="767" frameX="0" frameY="0" frameWidth="553" frameHeight="767" />
+</TextureAtlas>

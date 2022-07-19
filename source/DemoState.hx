@@ -23,7 +23,9 @@ import flixel.util.FlxTimer;
 import io.newgrounds.NG;
 import lime.app.Application;
 import openfl.Assets;
+#if GAMEJOLT
 import GameJolt.GameJoltAPI;
+#end
 
 #if windows
 import Discord.DiscordClient;
@@ -52,20 +54,21 @@ class DemoState extends MusicBeatState
 
 		lolText = new FlxText(0, 0, FlxG.width - 100, 26);
 		lolText.setFormat(Paths.font("lyrics.ttf"), 26, FlxColor.WHITE, CENTER);
-		lolText.text = "Sup! You should already know who wrote this message.\n
-        Ok so, here's some info about this update. I added GabTheAngryBird's Glitched Gem BETADCIU. Finally!\n
-		Info about next update: You'll have to wait like a long time for a next update cause I'm working on Vs. Lodger mod and it's my current objective for now.\n
-		If you want a next Some Trio update, wait until Friday Night Knock-Knockin' 1st demo (FNKK) releases. If it does, that means that we may go back working on Some Trio.\n\n
-		";
+		lolText.text = "Hi, there! After some long time, we finally we released the 1.5 update.\n
+		Sorry that you had to wait some time. We took a break from modding, due to school, work etc.\n
+		As this update releases (19th July) it's my 16th birthday! Yay!\n
+		Also, we changed the mod name from Some Trio to Scribblematic Funkin', since the old mod name was going likely to change later.\n
+		We're gonna switch to Psych in 2.0 update. Btw some things are unfinished, but we'll fix that in 1.5.5 patch, so don't worry\n
+		Have a nice day - teotm\n\n\n\n\n\n";
 		lolText.borderColor = FlxColor.BLACK;
 		lolText.borderSize = 3;
 		lolText.borderStyle = FlxTextBorderStyle.OUTLINE;
 		lolText.screenCenter();
 		add(lolText);
 
-        lolText2 = new FlxText(0, 200, FlxG.width, 34);
-		lolText2.setFormat(Paths.font("channels.ttf"), 34, FlxColor.WHITE, CENTER);
-		lolText2.text = "\n \n \n \n \n \n \n \n \n \nPress Space to check out Knock-Knockin' mod we're working on.";
+        lolText2 = new FlxText(0, 200, FlxG.width, 24);
+		lolText2.setFormat(Paths.font("lyrics.ttf"), 24, FlxColor.WHITE, CENTER);
+		lolText2.text = "\n\n\n\n\n\n\n\n\nLil' bit of info:\nEmerald got replaced by chill grunt in the lore due to our agreement.\nAlso, I'll post somewhere the playable BETADCIUs and Covers somewhere else as a Psych modpack, so if you wanna play 'em, you'll have to wait some time.";
 		lolText2.borderColor = FlxColor.BLACK;
 		lolText2.borderSize = 3;
 		lolText2.borderStyle = FlxTextBorderStyle.OUTLINE;
@@ -74,8 +77,8 @@ class DemoState extends MusicBeatState
 		add(lolText2);
 
 		lolText3 = new FlxText(0, 200, FlxG.width, 48);
-		lolText3.setFormat(Paths.font("undertale.ttf"), 48, FlxColor.WHITE, CENTER);
-		lolText3.text = '\n \n \n \n \n \n \n \n \n Press Enter to continue.';
+		lolText3.setFormat(Paths.font("sonic1.ttf"), 48, FlxColor.WHITE, CENTER);
+		lolText3.text = '\n\n\n\n\n\n\n\n\n\nPress Enter to continue.';
 		lolText3.borderColor = FlxColor.BLACK;
 		lolText3.borderSize = 3;
 		lolText3.borderStyle = FlxTextBorderStyle.OUTLINE;
@@ -138,10 +141,6 @@ class DemoState extends MusicBeatState
 		{
 			FlxG.switchState(new MainMenuState());
 		}
-        if (FlxG.keys.justPressed.SPACE)
-        {
-            fancyOpenURL("https://gamejolt.com/games/knockknockmodyes/680521"); // sara heric productions
-        }
 	}
 
 	override function beatHit()

@@ -42,7 +42,7 @@ class KadeEngineData
 
 		if (FlxG.save.data.fpsCap > 285 || FlxG.save.data.fpsCap < 60)
 			FlxG.save.data.fpsCap = 120; // baby proof so you can't hard lock ur copy of kade engine
-		
+
 		if (FlxG.save.data.scrollSpeed == null)
 			FlxG.save.data.scrollSpeed = 1;
 
@@ -73,8 +73,23 @@ class KadeEngineData
 		if (FlxG.save.data.botplay == null)
 			FlxG.save.data.botplay = false;
 
+		if (FlxG.save.data.langPlEn == null)
+			FlxG.save.data.langPlEn = true; // sets language to english
+
+		if (FlxG.save.data.betadciuSomeTrioModCharChange == null)
+			FlxG.save.data.betadciuSomeTrioModCharChange = true;
+
+		if (FlxG.save.data.ogUnlocked == null)
+			FlxG.save.data.ogUnlocked = false;
+
+		if (FlxG.save.data.showTimeBar == null)
+			FlxG.save.data.showTimeBar = false;
+
+		//if (FlxG.save.data.chooseTheUI == null)
+			//FlxG.save.data.chooseTheUI = 'Kade';
+
 		if (FlxG.save.data.cpuStrums == null)
-			FlxG.save.data.cpuStrums = false;
+			FlxG.save.data.cpuStrums = true;
 
 		if (FlxG.save.data.strumline == null)
 			FlxG.save.data.strumline = false;
@@ -85,15 +100,6 @@ class KadeEngineData
 		if (FlxG.save.data.camzoom == null)
 			FlxG.save.data.camzoom = true;
 
-		if (FlxG.save.data.scoreScreen == null)
-			FlxG.save.data.scoreScreen = true;
-
-		if (FlxG.save.data.inputShow == null)
-			FlxG.save.data.inputShow = false;
-
-		if (FlxG.save.data.optimize == null)
-			FlxG.save.data.optimize = false;
-		
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 		
 		KeyBinds.gamepad = gamepad != null;

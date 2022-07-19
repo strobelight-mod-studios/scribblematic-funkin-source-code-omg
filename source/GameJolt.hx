@@ -1,3 +1,4 @@
+#if GAMEJOLT
 /*
 REQUIREMENTS:
 
@@ -91,22 +92,6 @@ import openfl.text.TextFormat;
 import openfl.Lib;
 import flixel.FlxG;
 import openfl.display.Sprite;
-
-import flixel.FlxState;
-import flixel.addons.display.FlxGridOverlay;
-import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
-import flixel.addons.transition.FlxTransitionableState;
-import flixel.addons.transition.TransitionData;
-import flixel.graphics.FlxGraphic;
-import flixel.graphics.frames.FlxAtlasFrames;
-import flixel.group.FlxGroup;
-import flixel.input.gamepad.FlxGamepad;
-import flixel.math.FlxPoint;
-import flixel.math.FlxRect;
-import flixel.system.FlxSound;
-import flixel.system.ui.FlxSoundTray;
-import lime.app.Application;
-import openfl.Assets;
 
 using StringTools;
 
@@ -399,6 +384,15 @@ class GameJoltInfo extends FlxSubState
         "Funfact, Kaskudek can't get corrupted by Pibby coruption, and normal corruption, cuz of of his life amulet - Kaskudek 2022",
         "Kaskudek is also self aware that you can't beat Boyfriend - Kaskudek",
         "If there's someone who likes making the overused Pibby corruption. Be aware that's impossible to make Kaskudek corrupted. Hell yeah! - teotm 2022",
+        "This emoji doesn't work here because it's from a different server. Upgrade to Discord Nitro to use emoji from other servers - Clyde 2019-2022",
+        "im sad - Emerald 2022",
+        "Pussy - Cheesy, sussybakaguyidkwhy, teotm, robo grunt, SaraHericProductions 2022",
+        "If you think the lore is deep now, you aren't ready for the shopkeeper lore - Kaskudek (responding to teotm's gay hedgehogs video) 2022",
+        "I'm not overweight. I'm undertale.",
+        "Why am I even recording how I'm makin' some ramen - Kaskudek 2022",
+        "https://cdn.discordapp.com/attachments/918999310471921836/953694056721043456/unknown.png - Fake Twitter Screenshot teotm edited",
+        "Femboy Bloodryne - SaraHericProductions 2022",
+        "Having boner - sussybakaguyidkwhy 2022",
         "bruh tord experiment went wrong - teotm 2022"
     ];
 }
@@ -480,7 +474,7 @@ class GameJoltLogin extends MusicBeatSubstate
         gamejoltText2.color = FlxColor.fromRGB(84,155,149);
         add(gamejoltText2);
 
-        funnyText = new FlxText(5, FlxG.height - 40, 0, GameJoltInfo.textArray[FlxG.random.int(0, GameJoltInfo.textArray.length - 1)]+ "", 12);
+        funnyText = new FlxText(5, FlxG.height - 40, 0, GameJoltInfo.textArray[FlxG.random.int(0, GameJoltInfo.textArray.length - 1)], 12);
         add(funnyText);
 
         versionText = new FlxText(5, FlxG.height - 22, 0, "Game ID: " + GJKeys.id + " API: " + GameJoltInfo.version, 12);
@@ -827,6 +821,8 @@ class Toast extends Sprite
         if(iconPath != null)
         {
             icon = new Bitmap(BitmapData.fromFile(iconPath));
+            icon.width = 100;
+            icon.height = 100;
             icon.x = 10;
             icon.y = 10;
         }
@@ -866,3 +862,4 @@ class Toast extends Sprite
         y = -height;
     }
 }
+#end

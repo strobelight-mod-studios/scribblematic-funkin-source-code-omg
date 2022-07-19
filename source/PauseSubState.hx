@@ -132,6 +132,8 @@ class PauseSubState extends MusicBeatSubstate
 			case 'dad-battle': songLowercase = 'dadbattle';
 			case 'philly-nice': songLowercase = 'philly';
 			case "rabbit's-luck": songLowercase = "rabbit's-luck-hard";
+			case 'intense training': songLowercase = 'intense-training';
+			case 'the shopkeeper': songLowercase = 'the-shopkeeper';
 		}
 		var songPath = 'assets/data/' + songLowercase + '/';
 

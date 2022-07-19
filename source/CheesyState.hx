@@ -52,7 +52,7 @@ class CheesyState extends MusicBeatState
 
 		textNumber1 = new FlxText(0, 0, FlxG.width, 32);
 		textNumber1.setFormat(Paths.font("undertale.ttf"), 32, FlxColor.WHITE, CENTER);
-		textNumber1.text = "\nYou tried to access Killer Scream by the Chart Editor.
+		textNumber1.text = "\nWassup, I see you were trying to access Crucify.
 		\nUnfortunately, this song is unfinished, so you'll have to be patient.
 		\nSigned: the coder, teotm.";
 		textNumber1.borderColor = FlxColor.BLACK;
@@ -97,7 +97,7 @@ class CheesyState extends MusicBeatState
 		}
         if (FlxG.keys.justPressed.SPACE)
         {
-            fancyOpenURL("https://www.youtube.com/watch?v=G144DaBBvH0/"); // SiIvaGunner Gumball Bonus - Sonic the Hedgehog 3 & Knuckles 
+            fancyOpenURL("https://www.youtube.com/watch?v=G144DaBBvH0/"); // SiIvaGunner A Little Heart to Heart - Team Fortress 2
         }
 	}
 

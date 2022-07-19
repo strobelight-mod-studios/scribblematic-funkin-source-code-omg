@@ -50,28 +50,6 @@ class IKnowWhatYouDidState extends MusicBeatState
 		var sonicCD:FlxSprite = new FlxSprite().loadGraphic(Paths.image('MajinFun'));
 		add(sonicCD);
 
-        /*
-		caughtYouInFourK = new FlxText(0, 0, FlxG.width, 32);
-		caughtYouInFourK.setFormat(Paths.font("undertale.ttf"), 32, FlxColor.WHITE, CENTER);
-		caughtYouInFourK.text = '\nYou tried to access one of the hidden songs by the chart editor.
-        \nIf you really want to play the song, you better wait until the next update (or play the mod where it originates from).
-        \nI know what you did and I caught you in 4k, so you better be careful. - teotm :) (the coder) \n \n \n \n \n \n';
-		caughtYouInFourK.borderColor = FlxColor.BLACK;
-		caughtYouInFourK.borderSize = 3;
-		caughtYouInFourK.borderStyle = FlxTextBorderStyle.OUTLINE;
-		caughtYouInFourK.screenCenter();
-		add(caughtYouInFourK);
-
-		textNumber2 = new FlxText(0, 0, FlxG.width, 28);
-		textNumber2.setFormat(Paths.font("lyrics.ttf"), 28, FlxColor.WHITE, CENTER);
-		textNumber2.text = '\n \n \n \n \n \n \n \n \n \n \nPress Enter to go back to the Main Menu.';
-		textNumber2.borderColor = FlxColor.BLACK;
-		textNumber2.borderSize = 3;
-		textNumber2.borderStyle = FlxTextBorderStyle.OUTLINE;
-		textNumber2.screenCenter();
-		add(textNumber2);
-        */
-
 		blackScreen = new FlxSprite(-100, -100).makeGraphic(Std.int(FlxG.width * 100), Std.int(FlxG.height * 100), FlxColor.BLACK);
 		blackScreen.scrollFactor.set();
 		add(blackScreen);

@@ -32,8 +32,10 @@ import Discord.DiscordClient;
 import sys.thread.Thread;
 #end
 
+#if GAMEJOLT
 import GameJolt;
 import GameJolt.GameJoltAPI;
+#end
 
 using StringTools;
 
@@ -48,15 +50,16 @@ class CanonSecretSongState extends MusicBeatState
 
 	override public function create():Void
 	{
-		FlxG.sound.playMusic(Paths.music('shush_stfu'));
+		FlxG.sound.playMusic(Paths.music('youve_been_trolled'));
 
-		var naughtyKaskudek:FlxSprite = new FlxSprite().loadGraphic(Paths.image('characters/hypno-shiny/kaskudekTheNaughtyBoy'));
+		var naughtyKaskudek:FlxSprite = new FlxSprite().loadGraphic(Paths.image('characters/jsons/kaskudekTheNaughtyBoy'));
 		add(naughtyKaskudek);
 
 		textNumber1 = new FlxText(0, 0, FlxG.width, 20);
 		textNumber1.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER);
-		textNumber1.text = "Sup'! I don't wanna be naughty like Kaskudek is to you right now, but please don't try access this canon to the lore song when you shouldn't.\n
-		Signed: teotm\nCanon to the mod fun fact: Kaskudek can be a really naughty person.\n\n\n\n\n\n\n\n\n\n\n";
+		textNumber1.text = "Nu-uh-uh! Ya ain't accessing the third song. Sorry bro, wait until 2.0 update comes out. If you really want something REAL secret that you can play, I'll give a hint for you:\n
+		Go back, Don't turn back and stay, Type a word with your modern pen. Follow the sound.\n
+		I've probably told you too much already";
 		textNumber1.borderColor = FlxColor.BLACK;
 		textNumber1.borderSize = 3;
 		textNumber1.borderStyle = FlxTextBorderStyle.OUTLINE;

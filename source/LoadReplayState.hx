@@ -157,10 +157,15 @@ class LoadReplayState extends MusicBeatState
 						case 'Dad-Battle': songFormat = 'Dadbattle';
 						case 'Philly-Nice': songFormat = 'Philly';
 						case "Rabbit's-Luck": songFormat = "Rabbit's-Luck-Hard";
+						// Sorry Kade, but I don't trust you. I know I could use 1.6.2, but Cheesy wanted the old chart editor
+						case 'Intense Training': songFormat = 'Intense-Training';
+						case 'The Shopkeeper': songFormat = 'The-Shopkeeper';
 						// Replay v1.0 support
 						case 'dad-battle': songFormat = 'Dadbattle';
 						case 'philly-nice': songFormat = 'Philly';
-						case "rabbit-s-luck": songFormat = "Rabbit's-Luck-Hard";
+						case "rabbit's-luck": songFormat = "Rabbit's-Luck-Hard";
+						case 'intense training': songFormat = 'Intense-Training';
+						case 'the shopkeeper': songFormat = 'The-Shopkeeper';
 					}
 
 					var poop:String = Highscore.formatSong(songFormat, PlayState.rep.replay.songDiff);

@@ -32,7 +32,7 @@ class Highscore
 			}
 			else
 				setScore(daSong, score);
-		}else trace('BotPlay detected. Score saving is disabled.');
+		}else trace("The player tried to cheat. We can't save save their score, sorry. :(");
 	}
 
 	public static function saveCombo(song:String, combo:String, ?diff:Int = 0):Void

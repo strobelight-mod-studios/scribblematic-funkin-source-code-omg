@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Sara_Real.png">
+<SubTexture name="Sara Idle0000" x="0" y="0" width="472" height="720" frameX="-168" frameY="-95" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Idle0001" x="0" y="0" width="472" height="720" frameX="-168" frameY="-95" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Idle0002" x="472" y="0" width="471" height="730" frameX="-155" frameY="-85" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Idle0003" x="472" y="0" width="471" height="730" frameX="-155" frameY="-85" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Idle0004" x="943" y="0" width="470" height="734" frameX="-139" frameY="-81" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Idle0005" x="943" y="0" width="470" height="734" frameX="-139" frameY="-81" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Left0000" x="1413" y="0" width="464" height="734" frameX="-120" frameY="-81" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Left0001" x="1413" y="0" width="464" height="734" frameX="-120" frameY="-81" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Left0002" x="0" y="734" width="464" height="734" frameX="-123" frameY="-81" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Left0003" x="0" y="734" width="464" height="734" frameX="-123" frameY="-81" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Right0000" x="464" y="734" width="508" height="734" frameX="-139" frameY="-81" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Right0001" x="464" y="734" width="508" height="734" frameX="-139" frameY="-81" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Right0002" x="972" y="734" width="505" height="734" frameX="-135" frameY="-81" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Right0003" x="972" y="734" width="505" height="734" frameX="-135" frameY="-81" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Up0000" x="1477" y="734" width="473" height="742" frameX="-127" frameY="-74" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Up0001" x="1477" y="734" width="473" height="742" frameX="-127" frameY="-74" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Up0002" x="0" y="1476" width="473" height="739" frameX="-127" frameY="-77" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Up0003" x="0" y="1476" width="473" height="739" frameX="-127" frameY="-77" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Down0000" x="473" y="1476" width="470" height="728" frameX="-145" frameY="-87" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Down0001" x="473" y="1476" width="470" height="728" frameX="-145" frameY="-87" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Down0002" x="943" y="1476" width="473" height="729" frameX="-143" frameY="-87" frameWidth="905" frameHeight="862" />
+<SubTexture name="Sara Down0003" x="943" y="1476" width="473" height="729" frameX="-143" frameY="-87" frameWidth="905" frameHeight="862" />
+</TextureAtlas>

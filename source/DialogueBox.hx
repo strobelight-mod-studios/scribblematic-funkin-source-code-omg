@@ -31,14 +31,17 @@ class DialogueBox extends FlxSpriteGroup
 
 	public var finishThing:Void->Void;
 
-	var portraitLeft:FlxSprite;
-	var portraitRight:FlxSprite;
+	var portraitLeft:FlxSprite; // GF (normal)
+	var portraitRight:FlxSprite; // BF
 	var portraitGF:FlxSprite;
 	var portraitGFcheer:FlxSprite;
 	var portraitKaskudek:FlxSprite;
-	var portraitKaskudekAngry:FlxSprite;
+	var portraitKaskudekAngry:FlxSprite; // not deleting these variables
 	var portraitKaskudekScared:FlxSprite;
 	var portraitKaskudekChill:FlxSprite;
+	var portraitBFScribblematic:FlxSprite;
+	var portraitGFScribblematic:FlxSprite;
+	var portraitChillGrunt:FlxSprite;
 //	var portraitTemplate:FlxSprite;
 
 	var handSelect:FlxSprite;
@@ -48,7 +51,7 @@ class DialogueBox extends FlxSpriteGroup
 	{
 		super();
 
-		switch (PlayState.SONG.song.toLowerCase())
+		switch (StringTools.replace(PlayState.SONG.song.toLowerCase()," ","-"))
 		{
 			case 'senpai':
 				FlxG.sound.playMusic(Paths.music('Lunchbox'), 0);
@@ -73,7 +76,7 @@ class DialogueBox extends FlxSpriteGroup
 		box = new FlxSprite(-20, 45);
 		
 		var hasDialog = false;
-		switch (PlayState.SONG.song.toLowerCase())
+		switch (StringTools.replace(PlayState.SONG.song.toLowerCase()," ","-"))
 		{
 			case 'senpai':
 				hasDialog = true;
@@ -96,7 +99,7 @@ class DialogueBox extends FlxSpriteGroup
 				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic(Paths.image('weeb/spiritFaceForward'));
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
-			case 'tutorial' | 'vault':
+			case 'tutorial' | 'vault' | 'intense-training' | 'intense training' | 'velocity':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
@@ -138,6 +141,15 @@ class DialogueBox extends FlxSpriteGroup
 		portraitKaskudek.scrollFactor.set();
 		add(portraitKaskudek);
 		portraitKaskudek.visible = false;
+
+		portraitChillGrunt = new FlxSprite(-1500, 10);
+		portraitChillGrunt.frames = Paths.getSparrowAtlas('portraits/chillGruntPortrait', 'shared');
+		portraitChillGrunt.animation.addByPrefix('enter', 'Chill Grunt Portrait Enter instance 1', 24, false);
+		portraitChillGrunt.setGraphicSize(Std.int(portraitChillGrunt.width * PlayState.daPixelZoom * 0.175));
+		portraitChillGrunt.updateHitbox();
+		portraitChillGrunt.scrollFactor.set();
+		add(portraitChillGrunt);
+		portraitChillGrunt.visible = false;
 
 		portraitKaskudekAngry = new FlxSprite(-1500, 10);
 		portraitKaskudekAngry.frames = Paths.getSparrowAtlas('portraits/kaskudekAngeryPortrait', 'shared');
@@ -183,6 +195,24 @@ class DialogueBox extends FlxSpriteGroup
 		portraitGFcheer.scrollFactor.set();
 		add(portraitGFcheer);
 		portraitGFcheer.visible = false;
+
+		portraitBFScribblematic = new FlxSprite(-50, 40);
+		portraitBFScribblematic.frames = Paths.getSparrowAtlas('portraits/boyfriendScribblematicPortrait', 'shared');
+		portraitBFScribblematic.animation.addByPrefix('enter', 'Scribblematic Boyfriend Portrait Enter instance 1', 24, false);
+		portraitBFScribblematic.setGraphicSize(Std.int(portraitBFScribblematic.width * PlayState.daPixelZoom * 0.15));
+		portraitBFScribblematic.updateHitbox();
+		portraitBFScribblematic.scrollFactor.set();
+		add(portraitBFScribblematic);
+		portraitBFScribblematic.visible = false;
+
+		portraitGFScribblematic = new FlxSprite(-50, 40);
+		portraitGFScribblematic.frames = Paths.getSparrowAtlas('portraits/gfScribblematicPortrait', 'shared');
+		portraitGFScribblematic.animation.addByPrefix('enter', 'Scribblematic Girlfriend Portrait Enter instance 1', 24, false);
+		portraitGFScribblematic.setGraphicSize(Std.int(portraitGFScribblematic.width * PlayState.daPixelZoom * 0.15));
+		portraitGFScribblematic.updateHitbox();
+		portraitGFScribblematic.scrollFactor.set();
+		add(portraitGFScribblematic);
+		portraitGFScribblematic.visible = false;
 		
 		box.animation.play('normalOpen');
 		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
@@ -196,6 +226,7 @@ class DialogueBox extends FlxSpriteGroup
 		portraitKaskudekAngry.screenCenter(X);
 		portraitKaskudekChill.screenCenter(X);
 		portraitKaskudekScared.screenCenter(X);
+		portraitChillGrunt.screenCenter(X);
 
 		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('hand', 'shared'));
 		add(handSelect);
@@ -279,8 +310,11 @@ class DialogueBox extends FlxSpriteGroup
 						portraitKaskudekAngry.visible = false;
 						portraitKaskudekChill.visible = false;
 						portraitKaskudekScared.visible = false;
+						portraitChillGrunt.visible = false;
 						portraitRight.visible = false;
 						portraitGFcheer.visible = false;
+						portraitBFScribblematic.visible = false;
+						portraitGFScribblematic.visible = false;
 						swagDialogue.alpha -= 1 / 5;
 						dropText.alpha = swagDialogue.alpha;
 					}, 5);
@@ -325,6 +359,10 @@ class DialogueBox extends FlxSpriteGroup
 				portraitKaskudekAngry.visible = false;
 				portraitKaskudekChill.visible = false;
 				portraitKaskudekScared.visible = false;
+				portraitBFScribblematic.visible = false;
+				portraitGFScribblematic.visible = false;
+				portraitChillGrunt.visible = false;
+				box.flipX = true;
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
@@ -338,6 +376,10 @@ class DialogueBox extends FlxSpriteGroup
 				portraitKaskudekAngry.visible = false;
 				portraitKaskudekChill.visible = false;
 				portraitKaskudekScared.visible = false;
+				portraitBFScribblematic.visible = false;
+				portraitGFScribblematic.visible = false;
+				portraitChillGrunt.visible = false;
+				box.flipX = false;
 				if (!portraitRight.visible)
 				{
 					portraitRight.visible = true;
@@ -351,6 +393,10 @@ class DialogueBox extends FlxSpriteGroup
 				portraitKaskudekAngry.visible = false;
 				portraitKaskudekChill.visible = false;
 				portraitKaskudekScared.visible = false;
+				portraitBFScribblematic.visible = false;
+				portraitGFScribblematic.visible = false;
+				portraitChillGrunt.visible = false;
+				box.flipX = true;
 				if (!portraitGF.visible)
 				{
 					portraitGF.visible = true;
@@ -364,6 +410,10 @@ class DialogueBox extends FlxSpriteGroup
 				portraitKaskudekAngry.visible = false;
 				portraitKaskudekChill.visible = false;
 				portraitKaskudekScared.visible = false;
+				portraitBFScribblematic.visible = false;
+				portraitGFScribblematic.visible = false;
+				portraitChillGrunt.visible = false;
+				box.flipX = false;
 				if (!portraitGFcheer.visible)
 				{
 					portraitGFcheer.visible = true;
@@ -377,6 +427,10 @@ class DialogueBox extends FlxSpriteGroup
 				portraitKaskudekAngry.visible = false;
 				portraitKaskudekChill.visible = false;
 				portraitKaskudekScared.visible = false;
+				portraitBFScribblematic.visible = false;
+				portraitGFScribblematic.visible = false;
+				portraitChillGrunt.visible = false;
+				box.flipX = true;
 				if (!portraitKaskudek.visible)
 				{
 					portraitKaskudek.visible = true;
@@ -390,6 +444,10 @@ class DialogueBox extends FlxSpriteGroup
 				portraitKaskudek.visible = false;
 				portraitKaskudekChill.visible = false;
 				portraitKaskudekScared.visible = false;
+				portraitBFScribblematic.visible = false;
+				portraitGFScribblematic.visible = false;
+				portraitChillGrunt.visible = false;
+				box.flipX = true;
 				if (!portraitKaskudekAngry.visible)
 				{
 					portraitKaskudekAngry.visible = true;
@@ -403,6 +461,10 @@ class DialogueBox extends FlxSpriteGroup
 				portraitKaskudek.visible = false;
 				portraitKaskudekAngry.visible = false;
 				portraitKaskudekChill.visible = false;
+				portraitBFScribblematic.visible = false;
+				portraitGFScribblematic.visible = false;
+				portraitChillGrunt.visible = false;
+				box.flipX = true;
 				if (!portraitKaskudekScared.visible)
 				{
 					portraitKaskudekScared.visible = true;
@@ -416,10 +478,65 @@ class DialogueBox extends FlxSpriteGroup
 				portraitKaskudek.visible = false;
 				portraitKaskudekAngry.visible = false;
 				portraitKaskudekScared.visible = false;
+				portraitBFScribblematic.visible = false;
+				portraitGFScribblematic.visible = false;
+				portraitChillGrunt.visible = false;
+				box.flipX = true;
 				if (!portraitKaskudekChill.visible)
 				{
 					portraitKaskudekChill.visible = true;
 					portraitKaskudekChill.animation.play('enter');
+				}
+			case 'cg' | 'chillgrunt':
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitGF.visible = false;
+				portraitGFcheer.visible = false;
+				portraitKaskudek.visible = false;
+				portraitKaskudekAngry.visible = false;
+				portraitKaskudekScared.visible = false;
+				portraitKaskudekChill.visible = false;
+				portraitBFScribblematic.visible = false;
+				portraitGFScribblematic.visible = false;
+				box.flipX = true;
+				if (!portraitChillGrunt.visible)
+				{
+					portraitChillGrunt.visible = true;
+					portraitChillGrunt.animation.play('enter');
+				}
+			case 'bf2':
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitGF.visible = false;
+				portraitGFcheer.visible = false;
+				portraitKaskudek.visible = false;
+				portraitKaskudekAngry.visible = false;
+				portraitKaskudekScared.visible = false;
+				portraitKaskudekChill.visible = false;
+				portraitGFScribblematic.visible = false;
+				portraitChillGrunt.visible = false;
+				box.flipX = false;
+				if (!portraitBFScribblematic.visible)
+				{
+					portraitBFScribblematic.visible = true;
+					portraitBFScribblematic.animation.play('enter');
+				}
+			case 'gf2':
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitGF.visible = false;
+				portraitGFcheer.visible = false;
+				portraitKaskudek.visible = false;
+				portraitKaskudekAngry.visible = false;
+				portraitKaskudekScared.visible = false;
+				portraitKaskudekChill.visible = false;
+				portraitBFScribblematic.visible = false;
+				portraitChillGrunt.visible = false;
+				box.flipX = false;
+				if (!portraitGFScribblematic.visible)
+				{
+					portraitGFScribblematic.visible = true;
+					portraitGFScribblematic.animation.play('enter');
 				}
 			/*
 			case 'template':
@@ -431,6 +548,9 @@ class DialogueBox extends FlxSpriteGroup
 				portraitKaskudekAngry.visible = false;
 				portraitKaskudekScared.visible = false;
 				portraitKaskudekChill.visible = false;
+				portraitBFScribblematic.visible = false;
+				portraitGFScribblematic.visible = false;
+				portraitChillGrunt.visible = false;
 				if (!portraitTemplate.visible)
 				{
 					portraitTemplate.visible = true;

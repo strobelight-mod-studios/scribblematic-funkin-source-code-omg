@@ -54,6 +54,8 @@ class Song
 			case 'dad-battle': folderLowercase = 'dadbattle';
 			case 'philly-nice': folderLowercase = 'philly';
 			case "rabbit's-luck": folderLowercase = "rabbit's-luck-hard";
+			case 'intense training': folderLowercase = 'intense-training';
+			case 'the shopkeeper': folderLowercase = 'the-shopkeeper';
 		}
 		
 		trace('loading ' + folderLowercase + '/' + jsonInput.toLowerCase());

@@ -1,0 +1,15 @@
+Why there is no one folder for all the dataminer intead? Cause yes. that's it.
+Oh and also in source code there is a "assets/preload/" folder which gets renamed to "assets/" while compiling the game. So if you are not using source code, you can just ignore the preload folder.
+Ok so here are the folders you can look up for easter eggs I left:
+assets/preload/data/corn-maze/
+assets/preload/data/vault/
+assets/preload/images/ - You can find some cool memes here. Also please add (unrelated to the mod) information about Lexi from one screenshot as soon as possible to Funkipedia. It's from official server.
+assets/preload/images/characters/jsons/ - I left a naughty meme(?)
+assets/preload/images/icons/ - Huh? Why is it listed here?
+assets/preload/videos/
+assets/shared/music/ - You can find scrapped Kaskudek's theme during dialogue
+assets/vsSomeTrioweek/images/scribblematicTrio/comics/ - Read those comics if you think your life is boring. Some of them are canon to this mod's lore
+assets/vsSomeTrioweek/images/scribblematicTrio/discord_emojis/ - Use them on your servers
+assets/vsSomeTrioweek/images/scribblematicTrio/lore as memes/ - Memes/Shitposts that show canon stuff to this mod's lore in a funny way
+assets/vsSomeTrioweek/images/scribblematicTrio/memes/ - funi stuff hehe
+assets/vsSomeTrioweek/sounds/ - Listen to the mod's death quotes

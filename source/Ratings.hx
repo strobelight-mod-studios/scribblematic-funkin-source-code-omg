@@ -5,8 +5,6 @@ class Ratings
     public static function GenerateLetterRank(accuracy:Float) // generate a letter ranking
     {
         var ranking:String = "N/A";
-		if(FlxG.save.data.botplay && !PlayState.loadRep)
-			ranking = "BotPlay";
 
         if (PlayState.misses == 0 && PlayState.bads == 0 && PlayState.shits == 0 && PlayState.goods == 0) // Marvelous (SICK) Full Combo
             ranking = "(MFC)";
@@ -86,10 +84,56 @@ class Ratings
 
         if (accuracy == 0)
             ranking = "N/A";
-		else if(FlxG.save.data.botplay && !PlayState.loadRep)
-			ranking = "BotPlay";
 
         return ranking;
+    }
+
+    public static function GenerateLetterRankPsych(accuracy:Float) // bcuz yes
+    {
+        var ranking:String = "N/A";
+
+        if (PlayState.misses == 0 && PlayState.bads == 0 && PlayState.shits == 0 && PlayState.goods == 0) // Marvelous (SICK) Full Combo
+            ranking = "MFC";
+        else if (PlayState.misses == 0 && PlayState.bads == 0 && PlayState.shits == 0 && PlayState.goods >= 1) // Good Full Combo (Nothing but Goods & Sicks)
+            ranking = "GFC";
+        else if (PlayState.misses == 0) // Regular FC
+            ranking = "FC";
+        else if (PlayState.misses < 10) // Single Digit Combo Breaks
+            ranking = "SDCB";
+        else
+            ranking = "Clear";
+
+        if (accuracy == 0)
+            ranking = "?";
+
+        return ranking;
+    }
+
+    public static function generateRatingName(accuracy:Float)
+    {
+        var ratingName:String = "Sick!";
+        var ratingStuff:Array<Dynamic> = [
+            ['You Suck!', 20], //From 0% to 19%
+            ['Shit', 40], //From 20% to 39%
+            ['Bad', 50], //From 40% to 49%
+            ['Bruh', 60], //From 50% to 59%
+            ['Meh', 69], //From 60% to 68%
+            ['Nice', 70], //69%
+            ['Good', 80], //From 70% to 79%
+            ['Great', 90], //From 80% to 89%
+            ['Sick!', 100], //From 90% to 99%
+        ];
+
+        for (i in 0...ratingStuff.length-1)
+        {
+            if(accuracy < ratingStuff[i][1])
+            {
+                ratingName = ratingStuff[i][0];
+                break;
+            }
+        }
+
+        return ratingName;
     }
     
     public static function CalculateRating(noteDiff:Float, ?customSafeZone:Float):String // Generate a judgement through some timing shit
@@ -107,45 +151,36 @@ class Ratings
 
         // trace('Hit Info\nDifference: ' + noteDiff + '\nZone: ' + Conductor.safeZoneOffset * 1.5 + "\nTS: " + customTimeScale + "\nLate: " + 155 * customTimeScale);
 
-        if (FlxG.save.data.botplay && !PlayState.loadRep)
-            return "sick"; // FUNNY
-	
-
-        var rating = checkRating(noteDiff,customTimeScale);
-
-
-        return rating;
-    }
-
-    public static function checkRating(ms:Float, ts:Float)
-    {
-        var rating = "sick";
-        if (ms <= 166 * ts && ms >= 135 * ts)
-            rating = "shit";
-        if (ms < 135 * ts && ms >= 90 * ts) 
-            rating = "bad";
-        if (ms < 90 * ts && ms >= 45 * ts)
-            rating = "good";
-        if (ms < 45 * ts && ms >= -45 * ts)
-            rating = "sick";
-        if (ms > -90 * ts && ms <= -45 * ts)
-            rating = "good";
-        if (ms > -135 * ts && ms <= -90 * ts)
-            rating = "bad";
-        if (ms > -166 * ts && ms <= -135 * ts)
-            rating = "shit";
-        return rating;
+	if (FlxG.save.data.botplay)
+	    return "sick"; // Hax Lol
+	    
+        if (noteDiff > 166 * customTimeScale) // so god damn early its a miss
+            return "miss";
+        if (noteDiff > 135 * customTimeScale) // way early
+            return "shit";
+        else if (noteDiff > 90 * customTimeScale) // early
+            return "bad";
+        else if (noteDiff > 45 * customTimeScale) // your kinda there
+            return "good";
+        else if (noteDiff < -45 * customTimeScale) // little late
+            return "good";
+        else if (noteDiff < -90 * customTimeScale) // late
+            return "bad";
+        else if (noteDiff < -135 * customTimeScale) // late as fuck
+            return "shit";
+        else if (noteDiff < -166 * customTimeScale) // so god damn late its a miss
+            return "miss";
+        return "sick";
     }
 
     public static function CalculateRanking(score:Int,scoreDef:Int,nps:Int,maxNPS:Int,accuracy:Float):String
     {
         return
          (FlxG.save.data.npsDisplay ?																							// NPS Toggle
-         "NPS: " + nps + " (Max " + maxNPS + ")" + (!PlayStateChangeables.botPlay || PlayState.loadRep ? " | " : "") : "") +								// 	NPS
-         (!PlayStateChangeables.botPlay || PlayState.loadRep ? "Score:" + (Conductor.safeFrames != 10 ? score + " (" + scoreDef + ")" : "" + score) + 		// Score
-         (FlxG.save.data.accuracyDisplay ?																						// Accuracy Toggle
+         "NPS: " + nps + " (Max " + maxNPS + ")" + (" | ") : "") +							                                   	// 	NPS
+         ("Score:" + (Conductor.safeFrames != 10 ? score + " (" + scoreDef + ")" : "" + score) + 	                        	// Score
          " | Combo Breaks:" + PlayState.misses + 																				// 	Misses/Combo Breaks
-         " | Accuracy:" + (PlayStateChangeables.botPlay && !PlayState.loadRep ? "N/A" : HelperFunctions.truncateFloat(accuracy, 2) + " %") +  				// 	Accuracy
-         " | " + GenerateLetterRank(accuracy) : "") : ""); 																		// 	Letter Rank
+         " | Accuracy:" + (HelperFunctions.truncateFloat(accuracy, 2) + " %") +  			                                	// 	Accuracy
+         " | " + GenerateLetterRank(accuracy)); 											    			    				// 	Letter Rank
     }
 }

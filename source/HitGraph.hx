@@ -15,6 +15,7 @@ import flixel.util.FlxDestroyUtil;
 
 /**
  * stolen from https://github.com/HaxeFlixel/flixel/blob/master/flixel/system/debug/stats/StatsGraph.hx
+ * ok ratio - teotm
  */
 class HitGraph extends Sprite
 {

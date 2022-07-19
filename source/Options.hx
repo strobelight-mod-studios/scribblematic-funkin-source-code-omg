@@ -96,6 +96,19 @@ class DFJKOption extends Option
 	}
 }
 
+/*
+class ChooseOneOfThree extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+
+		//var options:String = ['Vanilla', 'Kade', 'Psych'];
+	}
+}
+*/
+
 class CpuStrums extends Option
 {
 	public function new(desc:String)
@@ -177,7 +190,7 @@ class AccuracyOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Accuracy " + (!FlxG.save.data.accuracyDisplay ? "off" : "on");
+		return (!FlxG.save.data.accuracyDisplay ? "Psych" : "Kade") + " UI";
 	}
 }
 
@@ -197,7 +210,7 @@ class SongPositionOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Song Position " + (!FlxG.save.data.songPosition ? "off" : "on");
+		return FlxG.save.data.songPosition ? "Time Bar On" : "Time Bar Off";
 	}
 }
 
@@ -260,27 +273,6 @@ class FlashingLightsOption extends Option
 		return "Flashing Lights " + (!FlxG.save.data.flashing ? "off" : "on");
 	}
 }
-
-class ShowInput extends Option
-{
-	public function new(desc:String)
-	{
-		super();
-		description = desc;
-	}
-	public override function press():Bool
-	{
-		FlxG.save.data.inputShow = !FlxG.save.data.inputShow;
-		display = updateDisplay();
-		return true;
-	}
-
-	private override function updateDisplay():String
-	{
-		return (FlxG.save.data.inputShow ? "Extended Score Info" : "Minimalized Info");
-	}
-}
-
 
 class Judgement extends Option
 {
@@ -358,30 +350,6 @@ class FPSOption extends Option
 		return "FPS Counter " + (!FlxG.save.data.fps ? "off" : "on");
 	}
 }
-
-class ScoreScreen extends Option
-{
-	public function new(desc:String)
-	{
-		super();
-		description = desc;
-	}
-
-	public override function press():Bool
-	{
-		FlxG.save.data.scoreScreen = !FlxG.save.data.scoreScreen;
-		display = updateDisplay();
-		return true;
-	}
-
-	private override function updateDisplay():String
-	{
-		return (FlxG.save.data.scoreScreen ? "Show Score Screen" : "No Score Screen");
-	}
-}
-
-
-
 
 class FPSCapOption extends Option
 {
@@ -504,27 +472,6 @@ class RainbowFPSOption extends Option
 	}
 }
 
-class Optimization extends Option
-{
-	public function new(desc:String)
-		{
-			super();
-			description = desc;
-		}
-	
-		public override function press():Bool
-		{
-			FlxG.save.data.optimize = !FlxG.save.data.optimize;
-			display = updateDisplay();
-			return true;
-		}
-	
-		private override function updateDisplay():String
-		{
-			return "Optimization " + (FlxG.save.data.optimize ? "ON" : "OFF");
-		}
-}
-
 class NPSDisplayOption extends Option
 {
 	public function new(desc:String)
@@ -606,6 +553,26 @@ class CustomizeGameplay extends Option
 	private override function updateDisplay():String
 	{
 		return "Customize Gameplay";
+	}
+}
+
+class ShowTimeBarOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.showTimeBar = !FlxG.save.data.showTimeBar;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return FlxG.save.data.showTimeBar ? "Time Bar On" : "Time Bar Off";
 	}
 }
 
@@ -696,7 +663,7 @@ class LanguageOption extends Option // how do i code more than two options in ka
 
 	private override function updateDisplay():String
 	{
-		return  FlxG.save.data.langPlEn ? "Polish Language" : "English Language";
+		return  FlxG.save.data.langPlEn ? "English Language" : "Polish Language";
 	}
 }
 
@@ -717,7 +684,7 @@ class BETADCIUsomeTrioCharacterChanging extends Option
 
 	private override function updateDisplay():String
 	{
-		return  FlxG.save.data.betadciuSomeTrioModCharChange ? "Character changing off" : "Character changing on";
+		return FlxG.save.data.betadciuSomeTrioModCharChange ? "Character changing on" : "Character changing off";
 	}
 }
 

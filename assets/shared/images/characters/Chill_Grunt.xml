@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Chill_Grunt.png">
+<SubTexture name="Chill Grunt Idle0000" x="0" y="0" width="326" height="526" frameX="-189" frameY="-111" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Idle0001" x="0" y="0" width="326" height="526" frameX="-189" frameY="-111" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Idle0002" x="326" y="0" width="315" height="531" frameX="-193" frameY="-106" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Idle0003" x="326" y="0" width="315" height="531" frameX="-193" frameY="-106" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Idle0004" x="641" y="0" width="291" height="529" frameX="-198" frameY="-108" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Idle0005" x="641" y="0" width="291" height="529" frameX="-198" frameY="-108" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Right0000" x="932" y="0" width="334" height="525" frameX="-220" frameY="-112" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Right0001" x="932" y="0" width="334" height="525" frameX="-220" frameY="-112" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Right0002" x="0" y="531" width="323" height="525" frameX="-217" frameY="-112" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Right0003" x="0" y="531" width="323" height="525" frameX="-217" frameY="-112" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Up0000" x="323" y="531" width="371" height="528" frameX="-191" frameY="-110" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Up0001" x="323" y="531" width="371" height="528" frameX="-191" frameY="-110" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Up0002" x="694" y="531" width="349" height="526" frameX="-200" frameY="-112" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Up0003" x="694" y="531" width="349" height="526" frameX="-200" frameY="-112" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Left0000" x="1043" y="531" width="340" height="525" frameX="-159" frameY="-112" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Left0001" x="1043" y="531" width="340" height="525" frameX="-159" frameY="-112" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Left0002" x="0" y="1059" width="346" height="524" frameX="-163" frameY="-113" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Left0003" x="0" y="1059" width="346" height="524" frameX="-163" frameY="-113" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Down0000" x="346" y="1059" width="321" height="523" frameX="-218" frameY="-114" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Down0001" x="346" y="1059" width="321" height="523" frameX="-218" frameY="-114" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Down0002" x="667" y="1059" width="313" height="523" frameX="-220" frameY="-115" frameWidth="705" frameHeight="714" />
+<SubTexture name="Chill Grunt Down0003" x="667" y="1059" width="313" height="523" frameX="-220" frameY="-115" frameWidth="705" frameHeight="714" />
+</TextureAtlas>

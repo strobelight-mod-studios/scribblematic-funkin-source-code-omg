@@ -1,23 +1,23 @@
 :kaskudek:What the?
-:bf:Beep
+:bf2:Beep
 :kaskudek:Do you speak with normal language or you just use beeps?
-:bf:Skedoo bep beep
-:bf:Skibidoo dam pum para
-:gf:Yeah. He can, but doesn't want to.
+:bf2:Skedoo bep beep
+:bf2:Skibidoo dam pum para
+:gf2:Yeah. He can, but doesn't want to.
 :kaskudek:Ok, so why are you here?
-:bf:Beep bop
+:bf2:Beep bop
 :kaskudek:Oh
 :kaskudek:You must be Boyfriend.xml, teotm told me about you
-:bf:Beep
+:bf2:Beep
 :kaskudek:You are probably waiting for him
-:bf:Bo bee po
+:bf2:Bo bee po
 :kaskudek:I don't mind killing some time with music.
 :kaskudek:I must say only one thing.
-:bf:Bop?
+:bf2:Bop?
 :kaskudek:I am not that much of a singer, but, I can try.
 :kaskudek:Sorry for my akward face, but I still can't process what the frick is going on.
-:bf:Bep
+:bf2:Bep
 :kaskudek:Ok. let's get started!
-:gfCheer:Woo-hoo, I belive in you boyfriend.
-:bf:Beep!
+:gf2:Woo-hoo, I belive in you boyfriend.
+:bf2:Beep!
 :kaskudek:I don't belive in myself, so you would win anyway.

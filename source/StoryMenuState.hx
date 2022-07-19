@@ -13,6 +13,7 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.net.curl.CURLCode;
+import vlc.MP4Handler;
 
 #if windows
 import Discord.DiscordClient;
@@ -25,25 +26,25 @@ class StoryMenuState extends MusicBeatState
 	var scoreText:FlxText;
 
 	var weekData:Array<Dynamic> = [
-		['Tutorial'],
-		['Vault'],
-		['Works in progress...', 'Click to open', 'Gamejolt page']
+		['Tutorial', 'Intense Training'],
+		['Vault', 'Velocity'],
+		["We're switching", "to Psych now.", "This won't be", "a separate mod", "anymore!"]
 	];
-	var curDifficulty:Int = 1;
+	var curDifficulty:Int = 2;
 
 	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true];
 
 	var weekCharacters:Array<Dynamic> = [
-		['', 'bf', 'gf'],
-		['trio', 'bf', 'gf'],
-		['kaskudek', 'bf', 'gf']
+		['', '', ''],
+		['', '', ''],
+		['', '', '']
 	];
 
 	var weekNames:Array<String> = [
-		"ouch....",
-		"Friday Night Parkourin'",
-		"Vs. Kaskudek - The epic rematch (Works in progress)",
-		"if you see this week name in story menu then it's an error",
+		"Intense Training Prologue",
+		"Funkin' with Some Trio",
+		"Rematch with Kaskudek (Works in progress)",
+		"Kaskudek meets a Shopkeeper?", //if you see this week name in story menu then it's an error. lol"
 		"btw in next updates there's gonna be a new week so..."
 	];
 
@@ -54,6 +55,7 @@ class StoryMenuState extends MusicBeatState
 	var txtTracklist:FlxText;
 
 	var grpWeekText:FlxTypedGroup<MenuItem>;
+	var weekSprites:FlxSprite;
 	var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
 
 	var grpLocks:FlxTypedGroup<FlxSprite>;
@@ -140,6 +142,12 @@ class StoryMenuState extends MusicBeatState
 		grpWeekCharacters.add(new MenuCharacter(450, 25, 0.9, true));
 		grpWeekCharacters.add(new MenuCharacter(850, 100, 0.5, true));
 
+		weekSprites = new FlxSprite(yellowBG.x, yellowBG.y).loadGraphic(Paths.image('we_do_a_little_trolling'), true, 1280, 400);
+		weekSprites.animation.add('week0', [0], 0, false);
+		weekSprites.animation.add('week1', [1], 0, false);
+		weekSprites.animation.add('week2', [2], 0, false);
+		weekSprites.antialiasing = true;
+
 		difficultySelectors = new FlxGroup();
 		add(difficultySelectors);
 
@@ -173,11 +181,12 @@ class StoryMenuState extends MusicBeatState
 
 		add(yellowBG);
 		add(grpWeekCharacters);
+		add(weekSprites);
 
 		txtTracklist = new FlxText(FlxG.width * 0.05, yellowBG.x + yellowBG.height + 100, 0, "Tracks", 32);
 		txtTracklist.alignment = CENTER;
 		txtTracklist.font = rankText.font;
-		txtTracklist.color = 0xFFe55777;
+		txtTracklist.color = 0xFF0EF00E;
 		add(txtTracklist);
 		// add(rankText);
 		add(scoreText);
@@ -299,7 +308,7 @@ class StoryMenuState extends MusicBeatState
 			switch (curWeek)
 			{
 				case 2:
-					fancyOpenURL("https://gamejolt.com/games/kaskud-goes-brrr/669501/");
+					FlxG.sound.play(Paths.sound('Sonic2_Sound_6D'));
 				default:
 					if (stopspamming == false)
 					{
@@ -323,6 +332,8 @@ class StoryMenuState extends MusicBeatState
 						case 'Dad-Battle': songFormat = 'Dadbattle';
 						case 'Philly-Nice': songFormat = 'Philly';
 						case "Rabbit's-Luck": songFormat = "Rabbit's-Luck-Hard";
+						case 'Intense Training': songFormat = 'Intense-Training';
+						case 'The Shopkeeper': songFormat = 'The-Shopkeeper';
 					}
 
 					var poop:String = Highscore.formatSong(songFormat, curDifficulty);
@@ -335,37 +346,10 @@ class StoryMenuState extends MusicBeatState
 					PlayState.storyWeek = curWeek;
 					PlayState.campaignScore = 0;
 
-					/*
 					new FlxTimer().start(1, function(tmr:FlxTimer)
 					{
 						LoadingState.loadAndSwitchState(new PlayState(), true);
 					});
-					*/
-
-					var video:MP4Handler = new MP4Handler();
-
-					if (curWeek == 0 && !isCutscene) // Checks if the current week is Tutorial.
-					new FlxTimer().start(1, function(tmr:FlxTimer)
-					{
-						{
-							video.playMP4(Paths.video('crab_workout'));
-							video.finishCallback = function()
-							{
-								LoadingState.loadAndSwitchState(new PlayState());
-							}
-							isCutscene = true;
-						}
-					});
-					else
-					{
-						new FlxTimer().start(1, function(tmr:FlxTimer)
-						{
-							if (isCutscene)
-								video.onVLCComplete();
-
-							LoadingState.loadAndSwitchState(new PlayState(), true);
-						});
-					}
 			}
 		}
 	}
@@ -374,10 +358,10 @@ class StoryMenuState extends MusicBeatState
 	{
 		curDifficulty += change;
 
-		if (curDifficulty < 0)
+		if (curDifficulty < 2) //hard only
 			curDifficulty = 2;
 		if (curDifficulty > 2)
-			curDifficulty = 0;
+			curDifficulty = 2;
 
 		sprDifficulty.offset.x = 0;
 
@@ -418,6 +402,8 @@ class StoryMenuState extends MusicBeatState
 			curWeek = 0;
 		if (curWeek < 0)
 			curWeek = weekData.length - 1;
+
+		weekSprites.animation.play('week' + curWeek);
 
 		var bullShit:Int = 0;
 
